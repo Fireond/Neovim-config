@@ -9,6 +9,40 @@ return {
         store_selection_keys = "<Tab>",
       })
     end,
+    keys = {
+      {
+        "fj",
+        function()
+          return require("luasnip").jumpable(1) and "<Plug>luasnip-jump-next" or "fj"
+        end,
+        expr = true,
+        silent = true,
+        mode = "i",
+      },
+      {
+        "fj",
+        function()
+          require("luasnip").jump(1)
+        end,
+        mode = "s",
+      },
+      {
+        "fk",
+        function()
+          return require("luasnip").jumpable(1) and "<Plug>luasnip-jump-next" or "fk"
+        end,
+        expr = true,
+        silent = true,
+        mode = "i",
+      },
+      {
+        "fk",
+        function()
+          require("luasnip").jump(1)
+        end,
+        mode = "s",
+      },
+    },
   },
   {
     "hrsh7th/nvim-cmp",
@@ -82,6 +116,15 @@ return {
       }
       wk.register(keymaps)
     end,
+    opts = {
+      triggers_blacklist = {
+        -- list of mode / prefixes that should never be hooked by WhichKey
+        -- this is mostly relevant for key maps that start with a native binding
+        -- most people should not need to change this
+        i = { "f", "j" },
+        v = { "f", "k" },
+      },
+    },
   },
   {
     "nvim-treesitter/nvim-treesitter",
