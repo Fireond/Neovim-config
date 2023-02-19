@@ -129,255 +129,297 @@ return {
     { trig = "td", snippetType = "autosnippet", priority = 2000 },
     fmta("\\tilde{<>}", {
       d(1, get_visual),
-    })
+    }),
+    { condition = tex_utils.in_mathzone }
   ),
   s(
     { trig = "td", snippetType = "autosnippet" },
     fmta("\\ttlde{<>}", {
       i(1),
-    })
+    }),
+    { condition = tex_utils.in_mathzone }
   ),
   s(
     { trig = "dot", snippetType = "autosnippet", priority = 2000 },
     fmta("\\dot{<>}", {
       d(1, get_visual),
-    })
+    }),
+    { condition = tex_utils.in_mathzone }
   ),
   s(
     { trig = "dot", snippetType = "autosnippet" },
     fmta("\\dot{<>}", {
       i(1),
-    })
+    }),
+    { condition = tex_utils.in_mathzone }
   ),
   s(
     { trig = "vb", snippetType = "autosnippet", priority = 2000 },
     fmta("\\vb{<>}", {
       d(1, get_visual),
-    })
+    }),
+    { condition = tex_utils.in_mathzone }
   ),
   s(
     { trig = "vb", snippetType = "autosnippet" },
     fmta("\\vb{<>}", {
       i(1),
-    })
+    }),
+    { condition = tex_utils.in_mathzone }
   ),
   s(
     { trig = "ivb", snippetType = "autosnippet", priority = 2000 },
     fmta("\\vb*{<>}", {
       d(1, get_visual),
-    })
+    }),
+    { condition = tex_utils.in_mathzone }
   ),
   s(
     { trig = "ivb", snippetType = "autosnippet" },
     fmta("\\vb*{<>}", {
       i(1),
-    })
+    }),
+    { condition = tex_utils.in_mathzone }
   ),
   s(
     { trig = "hat", snippetType = "autosnippet", priority = 2000 },
     fmta("\\hat{<>}", {
       d(1, get_visual),
-    })
+    }),
+    { condition = tex_utils.in_mathzone }
   ),
   s(
     { trig = "hat", snippetType = "autosnippet" },
     fmta("\\hat{<>}", {
       i(1),
-    })
+    }),
+    { condition = tex_utils.in_mathzone }
   ),
   s(
     { trig = "vec", snippetType = "autosnippet", priority = 2000 },
     fmta("\\vec{<>}", {
       d(1, get_visual),
-    })
+    }),
+    { condition = tex_utils.in_mathzone }
   ),
   s(
     { trig = "vec", snippetType = "autosnippet" },
     fmta("\\vec{<>}", {
       i(1),
-    })
+    }),
+    { condition = tex_utils.in_mathzone }
   ),
   s(
     { trig = "msf", snippetType = "autosnippet", priority = 2000 },
     fmta("\\mathsf{<>}", {
       d(1, get_visual),
-    })
+    }),
+    { condition = tex_utils.in_mathzone }
   ),
   s(
     { trig = "msf", snippetType = "autosnippet" },
     fmta("\\mathsf{<>}", {
       i(1),
-    })
+    }),
+    { condition = tex_utils.in_mathzone }
   ),
   s(
     { trig = "cal", snippetType = "autosnippet", priority = 2000 },
     fmta("\\mathcal{<>}", {
       d(1, get_visual),
-    })
+    }),
+    { condition = tex_utils.in_mathzone }
   ),
   s(
     { trig = "cal", snippetType = "autosnippet" },
     fmta("\\mathcal{<>}", {
       i(1),
-    })
+    }),
+    { condition = tex_utils.in_mathzone }
   ),
   s(
     { trig = "scr", snippetType = "autosnippet", priority = 2000 },
     fmta("\\mathscr{<>}", {
       d(1, get_visual),
-    })
+    }),
+    { condition = tex_utils.in_mathzone }
   ),
   s(
     { trig = "scr", snippetType = "autosnippet" },
     fmta("\\mathscr{<>}", {
       i(1),
-    })
+    }),
+    { condition = tex_utils.in_mathzone }
   ),
   s(
     { trig = "mbb", snippetType = "autosnippet", priority = 2000 },
     fmta("\\mathbb{<>}", {
       d(1, get_visual),
-    })
+    }),
+    { condition = tex_utils.in_mathzone }
   ),
   s(
     { trig = "mbb", snippetType = "autosnippet" },
     fmta("\\mathbb{<>}", {
       i(1),
-    })
+    }),
+    { condition = tex_utils.in_mathzone }
   ),
   s(
     { trig = "mrm", snippetType = "autosnippet", priority = 2000 },
     fmta("\\mathrm{<>}", {
       d(1, get_visual),
-    })
+    }),
+    { condition = tex_utils.in_mathzone }
   ),
   s(
     { trig = "mrm", snippetType = "autosnippet" },
     fmta("\\mathrm{<>}", {
       i(1),
-    })
+    }),
+    { condition = tex_utils.in_mathzone }
   ),
   s(
     { trig = "qb", snippetType = "autosnippet", priority = 2000 },
     fmta("\\qty(<>)", {
       d(1, get_visual),
-    })
+    }),
+    { condition = tex_utils.in_mathzone }
   ),
   s(
     { trig = "qb", snippetType = "autosnippet" },
     fmta("\\qty(<>)", {
       i(1),
-    })
+    }),
+    { condition = tex_utils.in_mathzone }
   ),
   s(
     { trig = "qB", snippetType = "autosnippet", priority = 2000 },
     fmta("\\qty{<>}", {
       d(1, get_visual),
-    })
+    }),
+    { condition = tex_utils.in_mathzone }
   ),
   s(
     { trig = "qB", snippetType = "autosnippet" },
     fmta("\\qty{<>}", {
       i(1),
-    })
+    }),
+    { condition = tex_utils.in_mathzone }
   ),
   s(
     { trig = "q[]", snippetType = "autosnippet", priority = 2000 },
     fmta("\\qty[<>", {
       d(1, get_visual),
-    })
+    }),
+    { condition = tex_utils.in_mathzone }
   ),
   s(
     { trig = "q[", snippetType = "autosnippet" },
     fmta("\\qty[<>", {
       i(1),
-    })
+    }),
+    { condition = tex_utils.in_mathzone }
   ),
   s(
     { trig = "ket", snippetType = "autosnippet", priority = 2000 },
     fmta("\\ket{<>}", {
       d(1, get_visual),
-    })
+    }),
+    { condition = tex_utils.in_mathzone }
   ),
   s(
     { trig = "ket", snippetType = "autosnippet" },
     fmta("\\ket{<>}", {
       i(1),
-    })
+    }),
+    { condition = tex_utils.in_mathzone }
   ),
   s(
     { trig = "bra", snippetType = "autosnippet", priority = 2000 },
     fmta("\\bra{<>}", {
       d(1, get_visual),
-    })
+    }),
+    { condition = tex_utils.in_mathzone }
   ),
   s(
     { trig = "bra", snippetType = "autosnippet" },
     fmta("\\bra{<>}", {
       i(1),
-    })
+    }),
+    { condition = tex_utils.in_mathzone }
   ),
   s(
     { trig = "norm", snippetType = "autosnippet", priority = 2000 },
     fmta("\\norm{<>}", {
       d(1, get_visual),
-    })
+    }),
+    { condition = tex_utils.in_mathzone }
   ),
   s(
     { trig = "norm", snippetType = "autosnippet" },
     fmta("\\norm{<>}", {
       i(1),
-    })
+    }),
+    { condition = tex_utils.in_mathzone }
   ),
   s(
     { trig = "abs", snippetType = "autosnippet", priority = 2000 },
     fmta("\\abs{<>}", {
       d(1, get_visual),
-    })
+    }),
+    { condition = tex_utils.in_mathzone }
   ),
   s(
     { trig = "abs", snippetType = "autosnippet" },
     fmta("\\abs{<>}", {
       i(1),
-    })
+    }),
+    { condition = tex_utils.in_mathzone }
   ),
   s(
     { trig = "norm", snippetType = "autosnippet", priority = 2000 },
     fmta("\\norm{<>}", {
       d(1, get_visual),
-    })
+    }),
+    { condition = tex_utils.in_mathzone }
   ),
   s(
     { trig = "norm", snippetType = "autosnippet" },
     fmta("\\norm{<>}", {
       i(1),
-    })
+    }),
+    { condition = tex_utils.in_mathzone }
   ),
   s(
     { trig = "bk", snippetType = "autosnippet" },
     fmta("\\ip{<>}{<>}", {
       i(1),
       i(2),
-    })
+    }),
+    { condition = tex_utils.in_mathzone }
   ),
   s(
     { trig = "kb", snippetType = "autosnippet" },
     fmta("\\op{<>}", {
       i(1),
-    })
+    }),
+    { condition = tex_utils.in_mathzone }
   ),
   s(
     { trig = "ev", snippetType = "autosnippet" },
     fmta("\\ev{<>}", {
       i(1),
-    })
+    }),
+    { condition = tex_utils.in_mathzone }
   ),
   s(
     { trig = "mev", snippetType = "autosnippet" },
     fmta("\\ev{<>}{<>}", {
       i(1),
       i(2),
-    })
+    }),
+    { condition = tex_utils.in_mathzone }
   ),
   s(
     { trig = "mel", snippetType = "autosnippet" },
@@ -385,18 +427,21 @@ return {
       i(1),
       i(2),
       i(3),
-    })
+    }),
+    { condition = tex_utils.in_mathzone }
   ),
   s(
     { trig = "ran", snippetType = "autosnippet" },
     fmta("\\rank{<>}", {
       i(1),
-    })
+    }),
+    { condition = tex_utils.in_mathzone }
   ),
   s(
     { trig = "det", snippetType = "autosnippet" },
     fmta("\\det{<>}", {
       i(1),
-    })
+    }),
+    { condition = tex_utils.in_mathzone }
   ),
 }

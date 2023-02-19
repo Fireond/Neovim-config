@@ -114,7 +114,7 @@ return {
         i(2),
         rep(2),
         i(3),
-        rep(1), -- this node repeats insert node i(1)
+        rep(1),
       }
     ),
     { condition = line_begin }

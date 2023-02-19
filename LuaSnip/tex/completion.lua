@@ -50,7 +50,8 @@ return {
       f(function(_, snip)
         return snip.captures[2]
       end),
-    })
+    }),
+    { condition = tex_utils.in_mathzone }
   ),
   s(
     { trig = "([%a%)%]%}])_%{(%d)%}(%d)", regTrig = true, wordTrig = false, snippetType = "autosnippet" },
@@ -64,7 +65,8 @@ return {
       f(function(_, snip)
         return snip.captures[3]
       end),
-    })
+    }),
+    { condition = tex_utils.in_mathzone }
   ),
   s(
     { trig = "([%a%)%]%}])(%a)%2", regTrig = true, wordTrig = false, snippetType = "autosnippet", priority = 100 },
@@ -75,7 +77,8 @@ return {
       f(function(_, snip)
         return snip.captures[2]
       end),
-    })
+    }),
+    { condition = tex_utils.in_mathzone }
   ),
   s(
     { trig = "(%a)/", regTrig = true, wordTrig = false, snippetType = "autosnippet", priority = 100 },
@@ -84,7 +87,8 @@ return {
         return snip.captures[1]
       end),
       i(1),
-    })
+    }),
+    { condition = tex_utils.in_mathzone }
   ),
   s(
     { trig = "%((.)%)/", regTrig = true, wordTrig = false, snippetType = "autosnippet" },
@@ -93,7 +97,8 @@ return {
         return snip.captures[1]
       end),
       i(1),
-    })
+    }),
+    { condition = tex_utils.in_mathzone }
   ),
   s(
     { trig = "(\\%a+)/", regTrig = true, wordTrig = false, snippetType = "autosnippet", priority = 2000 },
@@ -102,7 +107,8 @@ return {
         return snip.captures[1]
       end),
       i(1),
-    })
+    }),
+    { condition = tex_utils.in_mathzone }
   ),
   s(
     { trig = "(\\%a+%{%a+%})/", regTrig = true, wordTrig = false, snippetType = "autosnippet", priority = 3000 },
@@ -111,7 +117,8 @@ return {
         return snip.captures[1]
       end),
       i(1),
-    })
+    }),
+    { condition = tex_utils.in_mathzone }
   ),
   s(
     { trig = "\\%)(%a)", regTrig = true, wordTrig = false, snippetType = "autosnippet", priority = 2000 },
@@ -119,35 +126,40 @@ return {
       f(function(_, snip)
         return snip.captures[1]
       end),
-    })
+    }),
+    { condition = tex_utils.in_mathzone }
   ),
   s(
     { trig = "sum", regTrig = true, wordTrig = false, snippetType = "autosnippet" },
     fmta("\\sum\\limits_{<>}^{<>}", {
       i(1, "\\n = 0"),
       i(2, "\\infty"),
-    })
+    }),
+    { condition = tex_utils.in_mathzone }
   ),
   s(
     { trig = "prod", regTrig = true, wordTrig = false, snippetType = "autosnippet" },
     fmta("\\prod\\limits_{<>}^{<>}", {
       i(1),
       i(2),
-    })
+    }),
+    { condition = tex_utils.in_mathzone }
   ),
   s(
     { trig = "bcap", regTrig = true, wordTrig = false, snippetType = "autosnippet" },
     fmta("\\bigcap\\limits_{<>}^{<>}", {
       i(1),
       i(2),
-    })
+    }),
+    { condition = tex_utils.in_mathzone }
   ),
   s(
     { trig = "bcup", regTrig = true, wordTrig = false, snippetType = "autosnippet" },
     fmta("\\bigcup\\limits_{<>}^{<>}", {
       i(1),
       i(2),
-    })
+    }),
+    { condition = tex_utils.in_mathzone }
   ),
   s(
     { trig = "int", regTrig = true, wordTrig = false, snippetType = "autosnippet" },
@@ -156,7 +168,8 @@ return {
       i(2, "\\infty"),
       i(3),
       i(4, "x"),
-    })
+    }),
+    { condition = tex_utils.in_mathzone }
   ),
   s(
     { trig = "iint", regTrig = true, wordTrig = false, snippetType = "autosnippet" },
@@ -165,7 +178,8 @@ return {
       i(2, "\\infty"),
       i(3),
       i(4),
-    })
+    }),
+    { condition = tex_utils.in_mathzone }
   ),
   s(
     { trig = "lint", regTrig = true, wordTrig = false, snippetType = "autosnippet" },
@@ -173,6 +187,7 @@ return {
       i(1, "\\infty"),
       i(2),
       i(3),
-    })
+    }),
+    { condition = tex_utils.in_mathzone }
   ),
 }
