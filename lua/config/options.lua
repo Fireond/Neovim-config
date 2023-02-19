@@ -2,6 +2,14 @@
 -- Default options that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua
 -- Add any additional options here
 
+-- ======================= --
+-- Set line wrap and break --
+-- ======================= --
+vim.g.wrap = true
+vim.opt.breakindent = true
+vim.opt.linebreak = true
+vim.opt.showbreak = ">>"
+
 -- ============= --
 -- Vimtex Config --
 -- ============= --
@@ -19,6 +27,9 @@ vim.cmd([[
 let g:vimtex_syntax_custom_cmds = [
   \ {'name': 'limits', 'mathmode': 1, 'concealchar': ' '},
   \ {'name': 'dd', 'mathmode': 1, 'concealchar': 'd'},
+  \ {'name': 'cp', 'mathmode': 1, 'concealchar': 'x'},
+  \ {'name': 'rank', 'mathmode': 1, 'concealchar': 'r'},
+  \ {'name': 'vb', 'mathmode': 1, 'conceal': 1, 'argstyle': 'boldunder'},
   \]
 ]])
 

@@ -43,5 +43,13 @@ vim.keymap.set("n", "<leader>d", function()
   vim.api.nvim_buf_delete(0, {})
 end, { desc = "Delete Buffer" })
 
--- Go to settings
-map("n", "<leader>t", "<cmd>e ~/.config/nvim/lua/config/<cr>")
+map("n", "<leader>to", "<cmd>e ~/.config/nvim/lua/config/options.lua<cr>", { desc = "Go to options config" })
+map("n", "<leader>tk", "<cmd>e ~/.config/nvim/lua/config/keymaps.lua<cr>", { desc = "Go to keymaps config" })
+map("n", "<leader>ts", "<cmd>e ~/.config/nvim/LuaSnip/all.lua<cr>", { desc = "Go to luasnip config" })
+map("n", "<leader>tp", "<cmd>e ~/.config/nvim/lua/plugins/init.lua<cr>", { desc = "Go to plugins config" })
+map(
+  "n",
+  "<leader>tl",
+  "<cmd>e ~/.local/share/nvim/lazy/LazyVim/lua/lazyvim/init.lua<cr>",
+  { desc = "Go to lazyvim config" }
+)
