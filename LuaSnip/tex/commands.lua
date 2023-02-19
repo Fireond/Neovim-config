@@ -169,7 +169,7 @@ return {
   ),
   s(
     { trig = "ivb", snippetType = "autosnippet", priority = 2000 },
-    fmta("\\vb*{<>}", {
+    fmta("\\ivb{<>}", {
       d(1, get_visual),
     }),
     { condition = tex_utils.in_mathzone }

@@ -132,7 +132,7 @@ return {
   s(
     { trig = "sum", regTrig = true, wordTrig = false, snippetType = "autosnippet" },
     fmta("\\sum\\limits_{<>}^{<>}", {
-      i(1, "\\n = 0"),
+      i(1, "n = 0"),
       i(2, "\\infty"),
     }),
     { condition = tex_utils.in_mathzone }
