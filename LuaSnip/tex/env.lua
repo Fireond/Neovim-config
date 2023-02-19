@@ -5,7 +5,6 @@ local t = ls.text_node
 local i = ls.insert_node
 local f = ls.function_node
 local d = ls.dynamic_node
-local fmt = require("luasnip.extras.fmt").fmt
 local fmta = require("luasnip.extras.fmt").fmta
 local rep = require("luasnip.extras").rep
 local line_begin = require("luasnip.extras.expand_conditions").line_begin
@@ -15,7 +14,7 @@ tex_utils.in_mathzone = function() -- math context detection
   return vim.fn["vimtex#syntax#in_mathzone"]() == 1
 end
 tex_utils.in_text = function()
-  return not tex_utils.in_mathzone()
+  return not tex_utils.in_mathzone
 end
 tex_utils.in_comment = function() -- comment detection
   return vim.fn["vimtex#syntax#in_comment"]() == 1
@@ -24,7 +23,6 @@ tex_utils.in_env = function(name) -- generic environment detection
   local is_inside = vim.fn["vimtex#env#is_inside"](name)
   return (is_inside[1] > 0 and is_inside[2] > 0)
 end
--- A few concrete environments---adapt as needed
 tex_utils.in_equation = function() -- equation environment detection
   return tex_utils.in_env("equation")
 end
@@ -120,7 +118,7 @@ return {
     { condition = line_begin }
   ),
   s(
-    { trig = "fram" },
+    { trig = "framed" },
     fmta(
       [[
       \begin{framed}
@@ -131,7 +129,7 @@ return {
         i(1),
       }
     ),
-    { condition = tex_utils.in_text() }
+    { condition = tex_utils.in_mathzone }
   ),
   s(
     { trig = "box" },
@@ -145,7 +143,7 @@ return {
         i(1),
       }
     ),
-    { condition = tex_utils.in_text() }
+    { condition = tex_utils.in_mathzone }
   ),
   s(
     { trig = "dcase" },
@@ -159,7 +157,7 @@ return {
         i(1),
       }
     ),
-    { condition = tex_utils.in_text() }
+    { condition = tex_utils.in_mathzone }
   ),
   s(
     { trig = "case" },
@@ -173,10 +171,10 @@ return {
         i(1),
       }
     ),
-    { condition = tex_utils.in_text() }
+    { condition = tex_utils.in_mathzone }
   ),
   s(
-    { trig = "bal" },
+    { trig = "bal", snippetType = "autosnippet" },
     fmta(
       [[
       \begin{aligned}
@@ -187,6 +185,23 @@ return {
         i(1),
       }
     ),
-    { condition = tex_utils.in_text() }
+    { condition = tex_utils.in_mathzone }
   ),
+  s(
+    { trig = "itz", snippetType = "autosnippet" },
+    fmta(
+      [[
+      \begin{itemize}
+        \item <>
+      \end{itemize}
+      ]],
+      {
+        i(1),
+      }
+    ),
+    { condition = tex_utils.in_mathzone }
+  ),
+  s({ trig = "it", snippetType = "autosnippet" }, {
+    t("\\item"),
+  }, { condition = line_begin }),
 }
