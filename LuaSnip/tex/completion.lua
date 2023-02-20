@@ -81,6 +81,16 @@ return {
     { condition = tex_utils.in_mathzone }
   ),
   s(
+    { trig = "(%d+)/", regTrig = true, wordTrig = false, snippetType = "autosnippet", priority = 100 },
+    fmta("\\frac{<>}{<>}", {
+      f(function(_, snip)
+        return snip.captures[1]
+      end),
+      i(1),
+    }),
+    { condition = tex_utils.in_mathzone }
+  ),
+  s(
     { trig = "(%a)/", regTrig = true, wordTrig = false, snippetType = "autosnippet", priority = 100 },
     fmta("\\frac{<>}{<>}", {
       f(function(_, snip)

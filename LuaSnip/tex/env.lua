@@ -204,4 +204,28 @@ return {
   s({ trig = "it", snippetType = "autosnippet" }, {
     t("\\item"),
   }, { condition = line_begin }),
+  s(
+    { trig = "cha", snippetType = "autosnippet" },
+    fmta(
+      [[
+        \chapter{<>}
+      ]],
+      {
+        i(1),
+      }
+    ),
+    { condition = line_begin }
+  ),
+  s(
+    { trig = "sec", snippetType = "autosnippet" },
+    fmta(
+      [[
+        \section{<>}
+      ]],
+      {
+        i(1),
+      }
+    ),
+    { condition = line_begin }
+  ),
 }

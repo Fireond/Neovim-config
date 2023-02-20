@@ -60,7 +60,7 @@ return {
     t("\\iff"),
   }, { condition = tex_utils.in_mathzone }),
   s({ trig = "inn", snippetType = "autosnippet" }, {
-    t("\\inn"),
+    t("\\in"),
   }, { condition = tex_utils.in_mathzone }),
   s({ trig = "notin", snippetType = "autosnippet" }, {
     t("\\not\\inn"),
@@ -75,7 +75,7 @@ return {
     t("\\neq"),
   }, { condition = tex_utils.in_mathzone }),
   s({ trig = "==", snippetType = "autosnippet" }, {
-    t("$="),
+    t("&="),
   }, { condition = tex_utils.in_mathzone }),
   s({ trig = "~=", snippetType = "autosnippet" }, {
     t("\\approx"),
@@ -166,5 +166,8 @@ return {
   }, { condition = tex_utils.in_mathzone }),
   s({ trig = "perp", snippetType = "autosnippet" }, {
     t("^\\perp"),
+  }, { condition = tex_utils.in_mathzone }),
+  s({ trig = "ss", snippetType = "autosnippet" }, {
+    t("^\\star"),
   }, { condition = tex_utils.in_mathzone }),
 }
