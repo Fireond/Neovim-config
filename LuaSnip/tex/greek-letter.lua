@@ -100,7 +100,7 @@ return {
   s({ trig = "pi", snippetType = "autosnippet" }, {
     t("\\pi"),
   }, { condition = tex_utils.in_mathzone }),
-  s({ trig = "rho", snippetType = "autosnippet" }, {
+  s({ trig = "Pi", snippetType = "autosnippet" }, {
     t("\\Pi"),
   }, { condition = tex_utils.in_mathzone }),
   s({ trig = "rho", snippetType = "autosnippet" }, {

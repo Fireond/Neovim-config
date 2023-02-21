@@ -9,27 +9,6 @@ local fmta = require("luasnip.extras.fmt").fmta
 local rep = require("luasnip.extras").rep
 local line_begin = require("luasnip.extras.expand_conditions").line_begin
 
-local tex_utils = {}
-tex_utils.in_mathzone = function() -- math context detection
-  return vim.fn["vimtex#syntax#in_mathzone"]() == 1
-end
-tex_utils.in_text = function()
-  return not tex_utils.in_mathzone
-end
-tex_utils.in_comment = function() -- comment detection
-  return vim.fn["vimtex#syntax#in_comment"]() == 1
-end
-tex_utils.in_env = function(name) -- generic environment detection
-  local is_inside = vim.fn["vimtex#env#is_inside"](name)
-  return (is_inside[1] > 0 and is_inside[2] > 0)
-end
-tex_utils.in_equation = function() -- equation environment detection
-  return tex_utils.in_env("equation")
-end
-tex_utils.in_itemize = function() -- itemize environment detection
-  return tex_utils.in_env("itemize")
-end
-
 local get_visual = function(args, parent)
   if #parent.snippet.env.SELECT_RAW > 0 then
     return sn(nil, i(1, parent.snippet.env.SELECT_RAW))
@@ -64,27 +43,83 @@ return {
     )
   ),
   s(
-    { trig = ";i", snippetType = "autosnippet", priority = 2000 },
+    { trig = ";it", snippetType = "autosnippet", priority = 2000 },
     fmta("*<>*", {
       d(1, get_visual),
     })
   ),
   s(
-    { trig = ";i", snippetType = "autosnippet" },
+    { trig = ";it", snippetType = "autosnippet" },
     fmta("*<>*", {
       i(1),
     })
   ),
   s(
-    { trig = ";b", snippetType = "autosnippet", priority = 2000 },
+    { trig = ";bo", snippetType = "autosnippet", priority = 2000 },
     fmta("**<>**", {
       d(1, get_visual),
     })
   ),
   s(
-    { trig = ";b", snippetType = "autosnippet" },
+    { trig = ";bo", snippetType = "autosnippet" },
     fmta("**<>**", {
       i(1),
     })
+  ),
+  s(
+    { trig = "bd", snippetType = "autosnippet" },
+    fmta(
+      [[
+      **Def.** (<>)
+        <>
+      ]],
+      {
+        i(1),
+        i(2),
+      }
+    ),
+    { condition = line_begin }
+  ),
+  s(
+    { trig = "bp", snippetType = "autosnippet" },
+    fmta(
+      [[
+      **Prop.** (<>)
+        <>
+      ]],
+      {
+        i(1),
+        i(2),
+      }
+    ),
+    { condition = line_begin }
+  ),
+  s(
+    { trig = "bt", snippetType = "autosnippet" },
+    fmta(
+      [[
+      **Thm.** (<>)
+        <>
+      ]],
+      {
+        i(1),
+        i(2),
+      }
+    ),
+    { condition = line_begin }
+  ),
+  s(
+    { trig = "br", snippetType = "autosnippet" },
+    fmta(
+      [[
+      **Proof.** (<>)
+        <>
+      ]],
+      {
+        i(1),
+        i(2),
+      }
+    ),
+    { condition = line_begin }
   ),
 }

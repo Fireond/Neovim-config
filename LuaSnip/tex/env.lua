@@ -55,11 +55,11 @@ return {
     fmta(
       [[
       \[
-        <>
+      <>
       .\]
       ]],
       {
-        i(1),
+        i(0),
       }
     )
   ),
@@ -100,6 +100,21 @@ return {
     })
   ),
   s(
+    { trig = "bp", snippetType = "autosnippet" },
+    fmta(
+      [[
+      \begin{homeworkProblem}[<>]
+        <>
+      \end{homeworkProblem}
+      ]],
+      {
+        i(1),
+        i(0),
+      }
+    ),
+    { condition = line_begin }
+  ),
+  s(
     { trig = "beg", snippetType = "autosnippet" },
     fmta(
       [[
@@ -111,8 +126,23 @@ return {
         i(1),
         i(2),
         rep(2),
-        i(3),
+        i(0),
         rep(1),
+      }
+    ),
+    { condition = line_begin }
+  ),
+  s(
+    { trig = "en", snippetType = "autosnippet" },
+    fmta(
+      [[
+      \begin{enumerate}[<>]
+        \item <>
+      \end{enumerate}
+      ]],
+      {
+        i(1, "(a)"),
+        i(0),
       }
     ),
     { condition = line_begin }
@@ -126,7 +156,7 @@ return {
       \end{framed}
       ]],
       {
-        i(1),
+        i(0),
       }
     ),
     { condition = tex_utils.in_mathzone }
@@ -140,7 +170,7 @@ return {
       \end{box}
       ]],
       {
-        i(1),
+        i(0),
       }
     ),
     { condition = tex_utils.in_mathzone }
@@ -154,7 +184,7 @@ return {
       \end{dcase}
       ]],
       {
-        i(1),
+        i(0),
       }
     ),
     { condition = tex_utils.in_mathzone }
@@ -168,7 +198,7 @@ return {
       \end{case}
       ]],
       {
-        i(1),
+        i(0),
       }
     ),
     { condition = tex_utils.in_mathzone }
@@ -182,13 +212,13 @@ return {
       \end{aligned}
       ]],
       {
-        i(1),
+        i(0),
       }
     ),
     { condition = tex_utils.in_mathzone }
   ),
   s(
-    { trig = "itz", snippetType = "autosnippet" },
+    { trig = "bit", snippetType = "autosnippet" },
     fmta(
       [[
       \begin{itemize}
@@ -196,10 +226,10 @@ return {
       \end{itemize}
       ]],
       {
-        i(1),
+        i(0),
       }
     ),
-    { condition = tex_utils.in_mathzone }
+    { condition = line_begin }
   ),
   s({ trig = "it", snippetType = "autosnippet" }, {
     t("\\item"),
