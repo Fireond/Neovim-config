@@ -43,7 +43,7 @@ end
 return {
   s(
     { trig = "([%a%)%]%}])(%d)", regTrig = true, wordTrig = false, snippetType = "autosnippet" },
-    fmta("<>_{<>}", {
+    fmta("<>_<>", {
       f(function(_, snip)
         return snip.captures[1]
       end),
@@ -54,7 +54,7 @@ return {
     { condition = tex_utils.in_mathzone }
   ),
   s(
-    { trig = "([%a%)%]%}])_%{(%d)%}(%d)", regTrig = true, wordTrig = false, snippetType = "autosnippet" },
+    { trig = "([%a%)%]%}])_(%d)(%d)", regTrig = true, wordTrig = false, snippetType = "autosnippet" },
     fmta("<>_{<><>}", {
       f(function(_, snip)
         return snip.captures[1]
@@ -70,12 +70,27 @@ return {
   ),
   s(
     { trig = "([%a%)%]%}])(%a)%2", regTrig = true, wordTrig = false, snippetType = "autosnippet", priority = 100 },
-    fmta("<>_{<>}", {
+    fmta("<>_<>", {
       f(function(_, snip)
         return snip.captures[1]
       end),
       f(function(_, snip)
         return snip.captures[2]
+      end),
+    }),
+    { condition = tex_utils.in_mathzone }
+  ),
+  s(
+    { trig = "([%a%)%]%}])_(%a)(%a)%3", regTrig = true, wordTrig = false, snippetType = "autosnippet", priority = 2000 },
+    fmta("<>_{<><>}", {
+      f(function(_, snip)
+        return snip.captures[1]
+      end),
+      f(function(_, snip)
+        return snip.captures[2]
+      end),
+      f(function(_, snip)
+        return snip.captures[3]
       end),
     }),
     { condition = tex_utils.in_mathzone }
@@ -136,6 +151,12 @@ return {
       f(function(_, snip)
         return snip.captures[1]
       end),
+    })
+  ),
+  s(
+    { trig = "lim", regTrig = true, wordTrig = false, snippetType = "autosnippet" },
+    fmta("\\lim\\limits_{<>}", {
+      i(1),
     }),
     { condition = tex_utils.in_mathzone }
   ),
@@ -173,10 +194,10 @@ return {
   ),
   s(
     { trig = "int", regTrig = true, wordTrig = false, snippetType = "autosnippet" },
-    fmta("\\int\\limits_{<>}^{<>}<> \\dd{<>}", {
+    fmta("\\int_{<>}^{<>}<> \\dd{<>}", {
       i(1),
       i(2),
-      i(0),
+      i(4),
       i(3),
     }),
     { condition = tex_utils.in_mathzone }
@@ -192,8 +213,8 @@ return {
     { condition = tex_utils.in_mathzone }
   ),
   s(
-    { trig = "lint", regTrig = true, wordTrig = false, snippetType = "autosnippet" },
-    fmta("\\iint\\limits_{<>}<> \\dd{<>}", {
+    { trig = "lint", regTrig = true, wordTrig = false, snippetType = "autosnippet", priority = 2000 },
+    fmta("\\int\\limits_{<>}<> \\dd{<>}", {
       i(1, "\\infty"),
       i(2),
       i(3),

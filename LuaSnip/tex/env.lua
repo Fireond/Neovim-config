@@ -14,7 +14,7 @@ tex_utils.in_mathzone = function() -- math context detection
   return vim.fn["vimtex#syntax#in_mathzone"]() == 1
 end
 tex_utils.in_text = function()
-  return not tex_utils.in_mathzone
+  return not tex_utils.in_mathzone()
 end
 tex_utils.in_comment = function() -- comment detection
   return vim.fn["vimtex#syntax#in_comment"]() == 1
@@ -48,20 +48,22 @@ return {
       {
         i(1),
       }
-    )
+    ),
+    { condition = tex_utils.in_text }
   ),
   s(
     { trig = "dd", snippetType = "autosnippet" },
     fmta(
       [[
       \[
-      <>
+        <>
       .\]
       ]],
       {
         i(0),
       }
-    )
+    ),
+    { condition = tex_utils.in_text }
   ),
   s(
     { trig = "tit", snippetType = "autosnippet", priority = 2000 },
@@ -118,14 +120,13 @@ return {
     { trig = "beg", snippetType = "autosnippet" },
     fmta(
       [[
-      \begin{<>}{<>}{<>}
+      \begin{<>}[<>]
         <>
       \end{<>}
       ]],
       {
         i(1),
         i(2),
-        rep(2),
         i(0),
         rep(1),
       }
@@ -133,7 +134,7 @@ return {
     { condition = line_begin }
   ),
   s(
-    { trig = "en", snippetType = "autosnippet" },
+    { trig = "ben", snippetType = "autosnippet" },
     fmta(
       [[
       \begin{enumerate}[<>]
@@ -251,6 +252,18 @@ return {
     fmta(
       [[
         \section{<>}
+      ]],
+      {
+        i(1),
+      }
+    ),
+    { condition = line_begin }
+  ),
+  s(
+    { trig = "ssec", snippetType = "autosnippet" },
+    fmta(
+      [[
+        \subsection{<>}
       ]],
       {
         i(1),

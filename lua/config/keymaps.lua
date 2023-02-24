@@ -39,17 +39,35 @@ else
   map("n", "<A-h>", "<cmd>bprevious<cr>", { desc = "Prev buffer" })
   map("n", "<A-l>", "<cmd>bnext<cr>", { desc = "Next buffer" })
 end
-vim.keymap.set("n", "<leader>d", function()
-  vim.api.nvim_buf_delete(0, {})
-end, { desc = "Delete Buffer" })
 
+-- go to files
 map("n", "<leader>to", "<cmd>e ~/.config/nvim/lua/config/options.lua<cr>", { desc = "Go to options config" })
 map("n", "<leader>tk", "<cmd>e ~/.config/nvim/lua/config/keymaps.lua<cr>", { desc = "Go to keymaps config" })
-map("n", "<leader>ts", "<cmd>e ~/.config/nvim/LuaSnip/all.lua<cr>", { desc = "Go to luasnip config" })
-map("n", "<leader>tp", "<cmd>e ~/.config/nvim/lua/plugins/init.lua<cr>", { desc = "Go to plugins config" })
+map("n", "<leader>ts", function()
+  require("luasnip.loaders").edit_snippet_files({})
+end, { desc = "Go to luasnip config" })
+map("n", "<leader>tp", "<cmd>e ~/.config/nvim/lua/plugins/r-default.lua<cr>", { desc = "Go to plugins config" })
 map(
   "n",
   "<leader>tl",
   "<cmd>e ~/.local/share/nvim/lazy/LazyVim/lua/lazyvim/init.lua<cr>",
   { desc = "Go to lazyvim config" }
 )
+
+-- Spell check
+map("i", "<C-d>", "<C-g>u<Esc>[s1z=`]a<C-g>u")
+
+-- Lazy
+map("n", "<leader>L", "<cmd>:Lazy<cr>", { desc = "Lazy" })
+
+-- Save file
+map("n", "<leader>w", "<cmd>:w<cr>", { desc = "Save" })
+
+-- Disable default keymaps
+local del = vim.keymap.del
+del("n", "<leader>bb")
+del("n", "<leader>ww")
+del("n", "<leader>wd")
+del("n", "<leader>w-")
+del("n", "<leader>w|")
+del("n", "<leader>l")

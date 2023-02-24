@@ -122,6 +122,9 @@ return {
   s({ trig = "bb1", snippetType = "autosnippet" }, {
     t("\\mathbbm{1}"),
   }, { condition = tex_utils.in_mathzone }),
+  s({ trig = "bbe", snippetType = "autosnippet" }, {
+    t("\\mathbb{E}"),
+  }, { condition = tex_utils.in_mathzone }),
   s({ trig = "exp", snippetType = "autosnippet" }, {
     t("\\exp"),
   }, { condition = tex_utils.in_mathzone }),
@@ -494,9 +497,24 @@ return {
     { condition = tex_utils.in_mathzone }
   ),
   s(
+    { trig = "ja", snippetType = "autosnippet" },
+    fmta("\\langle <> \\rangle", {
+      i(1),
+    }),
+    { condition = tex_utils.in_mathzone }
+  ),
+  s(
     { trig = ";r", snippetType = "autosnippet" },
     fmta("\\frac{<>}{<>}", {
       i(1),
+      i(2),
+    }),
+    { condition = tex_utils.in_mathzone }
+  ),
+  s(
+    { trig = ";r", snippetType = "autosnippet", priority = 2000 },
+    fmta("\\frac{<>}{<>}", {
+      d(1, get_visual),
       i(2),
     }),
     { condition = tex_utils.in_mathzone }
@@ -507,6 +525,38 @@ return {
       i(1),
       i(2),
     }),
+    { condition = tex_utils.in_mathzone }
+  ),
+  s(
+    { trig = "dd", snippetType = "autosnippet" },
+    fmta("\\dd{<>}", {
+      i(1),
+    }),
+    { condition = tex_utils.in_mathzone }
+  ),
+  s(
+    { trig = "sq", snippetType = "autosnippet" },
+    fmta("\\sqrt{<>}", {
+      i(1),
+    }),
+    { condition = tex_utils.in_mathzone }
+  ),
+  s(
+    { trig = "pp", snippetType = "autosnippet" },
+    fmta(
+      [[
+    \begin{pmatrix}
+    1 & <> & <>\\
+    0 & 1 & <>\\
+    0 & 0 & 1\\
+    \end{pmatrix}
+    ]],
+      {
+        i(1),
+        i(2),
+        i(3),
+      }
+    ),
     { condition = tex_utils.in_mathzone }
   ),
 }

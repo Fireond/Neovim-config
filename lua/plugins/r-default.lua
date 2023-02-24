@@ -6,6 +6,7 @@ return {
         enable_autosnippets = true,
         store_selection_keys = "<Tab>",
       })
+      require("luasnip.loaders.from_lua").load({ paths = "~/.config/nvim/LuaSnip" })
     end,
     keys = {
       {
@@ -39,6 +40,13 @@ return {
           require("luasnip").jump(1)
         end,
         mode = "s",
+      },
+      {
+        "<C-l>",
+        function()
+          return require("luasnip.extras.select_choice")()
+        end,
+        mode = { "i", "s" },
       },
     },
   },
@@ -103,7 +111,6 @@ return {
         ["]"] = { name = "+next" },
         ["["] = { name = "+prev" },
         ["<leader><tab>"] = { name = "+tabs" },
-        ["<leader>b"] = { name = "+buffer" },
         ["<leader>c"] = { name = "+code" },
         ["<leader>f"] = { name = "+file/find" },
         ["<leader>g"] = { name = "+git" },
@@ -111,9 +118,9 @@ return {
         ["<leader>q"] = { name = "+quit/session" },
         ["<leader>s"] = { name = "+search" },
         ["<leader>u"] = { name = "+ui" },
-        ["<leader>w"] = { name = "+windows" },
         ["<leader>x"] = { name = "+diagnostics/quickfix" },
         ["<leader>t"] = { name = "+go to config" },
+        ["<leader>l"] = { name = "+vimtex" },
         ["<leader>sn"] = { name = "+noice" },
       }
       wk.register(keymaps)
@@ -127,6 +134,22 @@ return {
         v = { "f", "k" },
       },
     },
+  },
+  {
+    "echasnovski/mini.bufremove",
+    -- stylua: ignore
+    keys =  function ()
+      return {
+      { "<leader>d", function() require("mini.bufremove").delete(0, false) end, desc = "Delete Buffer" },
+      { "<leader>D", function() require("mini.bufremove").delete(0, true) end, desc = "Delete Buffer (Force)" },
+    }
+    end ,
+  },
+  {
+    "akinsho/bufferline.nvim",
+    keys = function()
+      return {}
+    end,
   },
   {
     "nvim-treesitter/nvim-treesitter",

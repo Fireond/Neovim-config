@@ -104,7 +104,7 @@ return {
   s({ trig = "to", wordTrig = false, snippetType = "autosnippet" }, {
     t("\\to"),
   }, { condition = tex_utils.in_mathzone }),
-  s({ trig = "mto", wordTrig = false, snippetType = "autosnippet" }, {
+  s({ trig = "mto", wordTrig = false, snippetType = "autosnippet", priority = 1001 }, {
     t("\\mapsto"),
   }, { condition = tex_utils.in_mathzone }),
   s({ trig = "\\\\\\", wordTrig = false, snippetType = "autosnippet" }, {
@@ -113,7 +113,7 @@ return {
   s({ trig = "||", wordTrig = false, snippetType = "autosnippet" }, {
     t("\\mid"),
   }, { condition = tex_utils.in_mathzone }),
-  s({ trig = "sr", wordTrig = false, wordTrig = false, snippetType = "autosnippet" }, {
+  s({ trig = "sr", wordTrig = false, snippetType = "autosnippet" }, {
     t("^2"),
   }, { condition = tex_utils.in_mathzone }),
   s({ trig = "cb", wordTrig = false, snippetType = "autosnippet" }, {
@@ -173,8 +173,14 @@ return {
   s({ trig = "xx", wordTrig = false, snippetType = "autosnippet" }, {
     t("\\times"),
   }, { condition = tex_utils.in_mathzone }),
+  s({ trig = "=>", wordTrig = false, snippetType = "autosnippet" }, {
+    t("\\implies"),
+  }, { condition = tex_utils.in_mathzone }),
+  s({ trig = "llr", wordTrig = false, snippetType = "autosnippet" }, {
+    t("\\longleftrightarrow"),
+  }, { condition = tex_utils.in_mathzone }),
   s(
-    { trig = ";j", wordTrig = false, snippetType = "autosnippet" },
+    { trig = "jk", wordTrig = false, snippetType = "autosnippet" },
     fmta(
       [[
     _{<>}
@@ -184,7 +190,7 @@ return {
     { condition = tex_utils.in_mathzone }
   ),
   s(
-    { trig = ";k", wordTrig = false, snippetType = "autosnippet" },
+    { trig = "kj", wordTrig = false, snippetType = "autosnippet" },
     fmta(
       [[
     ^{<>}

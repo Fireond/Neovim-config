@@ -3,6 +3,8 @@
 -- Add any additional options here
 
 vim.opt.timeoutlen = 200
+vim.opt.spell = true
+vim.opt.spelllang = { "nl", "en" }
 -- ======================= --
 -- Set line wrap and break --
 -- ======================= --
@@ -30,7 +32,6 @@ let g:vimtex_syntax_custom_cmds = [
   \ {'name': 'cp', 'mathmode': 1, 'concealchar': 'x'},
   \ {'name': 'rank', 'mathmode': 1, 'concealchar': 'r'},
   \ {'name': 'vb', 'mathmode': 1, 'conceal': 1, 'argstyle': 'boldunder'},
-  \ {'name': 'qty', 'mathmode': 1, 'conceal': 1},
   \]
 ]])
 vim.cmd([[
