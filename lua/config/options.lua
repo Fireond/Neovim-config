@@ -36,12 +36,13 @@ let g:vimtex_syntax_custom_cmds = [
 ]])
 vim.cmd([[
 let g:vimtex_syntax_custom_cmds_with_concealed_delims = [
-          \ {'name': 'ket',
-          \  'mathmode': 1,
-          \  'conceal': 0,
-          \  'cchar_open': '|',
-          \  'cchar_close': '>'},
-          \]
+  \ {'name': 'ket', 'mathmode': 1, 'cchar_open': '|', 'cchar_close': '>'},
+  \ {'name': 'bra', 'mathmode': 1, 'cchar_open': '<', 'cchar_close': '|'},
+  \ {'name': 'abs', 'mathmode': 1, 'cchar_open': '|', 'cchar_close': '|'},
+  \ {'name': 'norm', 'mathmode': 1, 'cchar_open': '⫼', 'cchar_close': '⫼'},
+  \ {'name': 'ceil', 'mathmode': 1, 'cchar_open': '⌈', 'cchar_close': '⌉'},
+  \ {'name': 'floor', 'mathmode': 1, 'cchar_open': '⌊', 'cchar_close': '⌋'},
+  \]
 ]])
 
 -- =============== --

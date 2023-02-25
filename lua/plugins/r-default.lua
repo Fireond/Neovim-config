@@ -106,20 +106,17 @@ return {
       wk.setup(opts)
       local keymaps = {
         mode = { "n", "v" },
-        ["g"] = { name = "+goto" },
         ["gz"] = { name = "+surround" },
         ["]"] = { name = "+next" },
         ["["] = { name = "+prev" },
         ["<leader><tab>"] = { name = "+tabs" },
         ["<leader>c"] = { name = "+code" },
         ["<leader>f"] = { name = "+file/find" },
-        ["<leader>g"] = { name = "+git" },
-        ["<leader>gh"] = { name = "+hunks" },
         ["<leader>q"] = { name = "+quit/session" },
+        ["<leader>g"] = { name = "+go to" },
         ["<leader>s"] = { name = "+search" },
         ["<leader>u"] = { name = "+ui" },
         ["<leader>x"] = { name = "+diagnostics/quickfix" },
-        ["<leader>t"] = { name = "+go to config" },
         ["<leader>l"] = { name = "+vimtex" },
         ["<leader>sn"] = { name = "+noice" },
       }
@@ -168,5 +165,20 @@ return {
       keys[#keys + 1] = { "K", "5k" }
       keys[#keys + 1] = { "gk", vim.lsp.buf.hover, desc = "Hover" }
     end,
+  },
+  {
+    "nvim-telescope/telescope.nvim",
+    keys = {
+      { "<leader>gc", false },
+      { "<leader>gs", false },
+    },
+  },
+  {
+    "lewis6991/gitsigns.nvim",
+    opts = {
+      on_attach = function()
+        return {}
+      end,
+    },
   },
 }

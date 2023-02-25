@@ -535,7 +535,7 @@ return {
     { condition = tex_utils.in_mathzone }
   ),
   s(
-    { trig = "sq", snippetType = "autosnippet" },
+    { trig = "sq", wordTrig = false, snippetType = "autosnippet" },
     fmta("\\sqrt{<>}", {
       i(1),
     }),
