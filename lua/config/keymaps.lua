@@ -15,8 +15,9 @@ local function map(mode, lhs, rhs, opts)
   end
 end
 
-map({ "n", "i", "v" }, "J", "5j", { desc = "J = 5j" })
-map({ "n", "i", "v" }, "K", "5k", { desc = "K = 5k" })
+-- map({ "n", "v" }, "J", "5j", { desc = "J = 5j" })
+-- map({ "n", "v" }, "K", "5k", { desc = "K = 5k" })
+-- Better movement
 map({ "n", "v", "o" }, "H", "^", { desc = "Use 'H' as '^'" })
 map({ "n", "v", "o" }, "L", "$", { desc = "Use 'L' as '$'" })
 
@@ -27,11 +28,14 @@ map("n", ">", "v>g")
 -- buffers
 if Util.has("bufferline.nvim") then
   map({ "n", "i" }, "<A-h>", "<cmd>BufferLineCyclePrev<cr>", { desc = "Prev buffer" })
+  map("n", "<leader>k", "<cmd>BufferLineCyclePrev<cr>", { desc = "Prev buffer" })
   map({ "n", "i" }, "<A-l>", "<cmd>BufferLineCycleNext<cr>", { desc = "Next buffer" })
+  map("n", "<leader>j", "<cmd>BufferLineCycleNext<cr>", { desc = "Next buffer" })
 else
   map({ "n", "i" }, "<A-h>", "<cmd>bprevious<cr>", { desc = "Prev buffer" })
   map({ "n", "i" }, "<A-l>", "<cmd>bnext<cr>", { desc = "Next buffer" })
 end
+map("n", "<leader>D", "<C-W>c", { desc = "Delete window" })
 
 -- go to files
 map("n", "<leader>go", "<cmd>e ~/.config/nvim/lua/config/options.lua<cr>", { desc = "Go to options config" })
@@ -49,15 +53,16 @@ map(
 
 -- Spell check
 map({ "i", "n" }, "<C-d>", "<C-g>u<Esc>[s1z=`]a<C-g>u")
-
+map("n", "<leader>h", "a<C-g>u<Esc>[s1z=`]a<C-g>u<Esc>", { desc = "Check Spell" })
 -- Lazy
 map("n", "<leader>L", "<cmd>:Lazy<cr>", { desc = "Lazy" })
-
 -- Save file
 map("n", "<leader>w", "<cmd>:w<cr>", { desc = "Save" })
-
 -- Toggle terminal
 map("n", "<leader>t", "<cmd>ToggleTerm<cr>")
+-- Toggle transparent
+map("n", "<leader>ut", "<cmd>TransparentToggle<cr>")
+map("n", "<leader>z", "zt", { desc = "Top this line" })
 
 -- Disable default keymaps
 local del = vim.keymap.del

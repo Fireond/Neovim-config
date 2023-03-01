@@ -88,12 +88,12 @@ return {
   s({ trig = "Nu", snippetType = "autosnippet", wordTrig = false }, {
     t("\\Nu"),
   }, { condition = tex_utils.in_mathzone }),
-  s({ trig = "xi", snippetType = "autosnippet", wordTrig = false }, {
-    t("\\xi"),
-  }, { condition = tex_utils.in_mathzone }),
-  s({ trig = "Xi", snippetType = "autosnippet", wordTrig = false }, {
-    t("\\Xi"),
-  }, { condition = tex_utils.in_mathzone }),
+  -- s({ trig = "xi", snippetType = "autosnippet", wordTrig = false }, {
+  --   t("\\xi"),
+  -- }, { condition = tex_utils.in_mathzone }),
+  -- s({ trig = "Xi", snippetType = "autosnippet", wordTrig = false }, {
+  --   t("\\Xi"),
+  -- }, { condition = tex_utils.in_mathzone }),
   s({ trig = "omi", snippetType = "autosnippet", wordTrig = false }, {
     t("\\omicron"),
   }, { condition = tex_utils.in_mathzone }),

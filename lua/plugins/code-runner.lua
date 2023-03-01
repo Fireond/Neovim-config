@@ -8,6 +8,10 @@ return {
       { "<leader>rp", "<cmd>RunProject<cr>", desc = "Run Project" },
       { "<leader>rd", "<cmd>RunClose<cr>", desc = "Run Close" },
     },
-    config = true,
+    config = {
+      filetype = {
+        python = "python3 -u",
+      },
+    },
   },
 }

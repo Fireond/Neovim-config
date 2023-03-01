@@ -69,7 +69,7 @@ return {
     t("\\forall"),
   }, { condition = tex_utils.in_mathzone }),
   s({ trig = "ee", wordTrig = false, snippetType = "autosnippet" }, {
-    t("\\exits"),
+    t("\\exists"),
   }, { condition = tex_utils.in_mathzone }),
   s({ trig = "!=", wordTrig = false, snippetType = "autosnippet" }, {
     t("\\neq"),
@@ -178,6 +178,12 @@ return {
   }, { condition = tex_utils.in_mathzone }),
   s({ trig = "llr", wordTrig = false, snippetType = "autosnippet" }, {
     t("\\longleftrightarrow"),
+  }, { condition = tex_utils.in_mathzone }),
+  s({ trig = "cir", wordTrig = false, snippetType = "autosnippet" }, {
+    t("\\circ"),
+  }, { condition = tex_utils.in_mathzone }),
+  s({ trig = "iso", wordTrig = false, snippetType = "autosnippet" }, {
+    t("\\cong"),
   }, { condition = tex_utils.in_mathzone }),
   s(
     { trig = "jk", wordTrig = false, snippetType = "autosnippet" },

@@ -66,42 +66,6 @@ return {
     { condition = tex_utils.in_text }
   ),
   s(
-    { trig = "tit", snippetType = "autosnippet", priority = 2000 },
-    fmta("\\textit{<>}", {
-      d(1, get_visual),
-    })
-  ),
-  s(
-    { trig = "tit", snippetType = "autosnippet" },
-    fmta("\\textit{<>}", {
-      i(1),
-    })
-  ),
-  s(
-    { trig = "tbf", snippetType = "autosnippet", priority = 2000 },
-    fmta("\\textbf{<>}", {
-      d(1, get_visual),
-    })
-  ),
-  s(
-    { trig = "tbf", snippetType = "autosnippet" },
-    fmta("\\textbf{<>}", {
-      i(1),
-    })
-  ),
-  s(
-    { trig = "tet", snippetType = "autosnippet", priority = 2000 },
-    fmta("\\text{<>}", {
-      d(1, get_visual),
-    })
-  ),
-  s(
-    { trig = "tet", snippetType = "autosnippet" },
-    fmta("\\text{<>}", {
-      i(1),
-    })
-  ),
-  s(
     { trig = "bp", snippetType = "autosnippet" },
     fmta(
       [[
@@ -149,7 +113,7 @@ return {
     { condition = line_begin }
   ),
   s(
-    { trig = "framed" },
+    { trig = "framed", snippetType = "autosnippet" },
     fmta(
       [[
       \begin{framed}
@@ -163,7 +127,7 @@ return {
     { condition = tex_utils.in_mathzone }
   ),
   s(
-    { trig = "box" },
+    { trig = "box", snippetType = "autosnippet" },
     fmta(
       [[
       \begin{box}
@@ -177,12 +141,12 @@ return {
     { condition = tex_utils.in_mathzone }
   ),
   s(
-    { trig = "dcase" },
+    { trig = "dcase", snippetType = "autosnippet", priority = 2000 },
     fmta(
       [[
-      \begin{dcase}
+      \begin{dcases}
         <>
-      \end{dcase}
+      \end{dcases}
       ]],
       {
         i(0),
@@ -191,12 +155,12 @@ return {
     { condition = tex_utils.in_mathzone }
   ),
   s(
-    { trig = "case" },
+    { trig = "case", snippetType = "autosnippet" },
     fmta(
       [[
-      \begin{case}
+      \begin{cases}
         <>
-      \end{case}
+      \end{cases}
       ]],
       {
         i(0),
@@ -232,7 +196,7 @@ return {
     ),
     { condition = line_begin }
   ),
-  s({ trig = "it", snippetType = "autosnippet" }, {
+  s({ trig = "im", snippetType = "autosnippet" }, {
     t("\\item"),
   }, { condition = line_begin }),
   s(

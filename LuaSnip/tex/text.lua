@@ -16,4 +16,22 @@ return {
   s({ trig = "&&", snippetType = "autosnippet" }, {
     t("\\&"),
   }, { condition = tex_utils.in_text }),
+  s({ trig = "##", snippetType = "autosnippet" }, {
+    t("\\#"),
+  }, { condition = tex_utils.in_text }),
+  s({ trig = "thm", snippetType = "autosnippet" }, {
+    t("theorem"),
+  }, { condition = tex_utils.in_text }),
+  s({ trig = "pron", snippetType = "autosnippet" }, {
+    t("proposition"),
+  }, { condition = tex_utils.in_text }),
+  s({ trig = "exe", snippetType = "autosnippet" }, {
+    t("example"),
+  }, { condition = tex_utils.in_text }),
+  s({ trig = "iee", snippetType = "autosnippet" }, {
+    t("i.e."),
+  }, { condition = tex_utils.in_text }),
+  s({ trig = "stt", snippetType = "autosnippet" }, {
+    t("s.t."),
+  }, { condition = tex_utils.in_text }),
 }

@@ -169,7 +169,7 @@ return {
     { condition = tex_utils.in_mathzone }
   ),
   s(
-    { trig = "prod", regTrig = true, wordTrig = false, snippetType = "autosnippet" },
+    { trig = "pd", regTrig = true, wordTrig = false, snippetType = "autosnippet" },
     fmta("\\prod\\limits_{<>}^{<>}", {
       i(1),
       i(2),
