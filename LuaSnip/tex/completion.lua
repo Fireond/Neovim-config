@@ -197,13 +197,26 @@ return {
     fmta("\\int_{<>}^{<>}<> \\dd{<>}", {
       i(1),
       i(2),
-      i(4),
+      i(0),
       i(3),
     }),
     { condition = tex_utils.in_mathzone }
   ),
   s(
-    { trig = "iint", regTrig = true, wordTrig = false, snippetType = "autosnippet" },
+    { trig = "2int", regTrig = true, wordTrig = false, snippetType = "autosnippet", priority = 2000 },
+    fmta("\\int_{<>}^{<>}\\int_{<>}^{<>}<> \\dd{<>}\\dd{<>}", {
+      i(1),
+      i(2),
+      i(3),
+      i(4),
+      i(0),
+      i(5),
+      i(6),
+    }),
+    { condition = tex_utils.in_mathzone }
+  ),
+  s(
+    { trig = "iint", regTrig = true, wordTrig = false, snippetType = "autosnippet", priority = 2000 },
     fmta("\\iint\\limits_{<>}^{<>}<> \\dd{<>}", {
       i(1, "-\\infty"),
       i(2, "\\infty"),

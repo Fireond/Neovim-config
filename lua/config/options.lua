@@ -37,7 +37,6 @@ let g:vimtex_syntax_custom_cmds_with_concealed_delims = [
   \ {'name': 'floor', 'mathmode': 1, 'cchar_open': '⌊', 'cchar_close': '⌋'},
   \]
 ]])
--- Returning focus to Neovim after inverse search
 
 -- =============== --
 -- Markdown Config --
