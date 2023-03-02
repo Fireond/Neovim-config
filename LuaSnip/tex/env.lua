@@ -81,6 +81,20 @@ return {
     { condition = line_begin }
   ),
   s(
+    { trig = "bf", snippetType = "autosnippet" },
+    fmta(
+      [[
+      \begin{proof}
+        <>
+      \end{proof}
+      ]],
+      {
+        i(0),
+      }
+    ),
+    { condition = line_begin }
+  ),
+  s(
     { trig = "beg", snippetType = "autosnippet" },
     fmta(
       [[
@@ -200,6 +214,37 @@ return {
     t("\\item"),
   }, { condition = line_begin }),
   s(
+    { trig = "bcr", snippetType = "autosnippet" },
+    fmta(
+      [[
+      \begin{center}
+        <>
+      \end{center}
+      ]],
+      {
+        i(0),
+      }
+    ),
+    { condition = line_begin }
+  ),
+  s(
+    { trig = "btr", snippetType = "autosnippet" },
+    fmta(
+      [[
+      \begin{tabular}{<>}
+        \hline
+        <>
+        \hline
+      \end{tabular}
+      ]],
+      {
+        i(1),
+        i(0),
+      }
+    ),
+    { condition = line_begin }
+  ),
+  s(
     { trig = "cha", snippetType = "autosnippet" },
     fmta(
       [[
@@ -228,6 +273,18 @@ return {
     fmta(
       [[
         \subsection{<>}
+      ]],
+      {
+        i(1),
+      }
+    ),
+    { condition = line_begin }
+  ),
+  s(
+    { trig = "sss", snippetType = "autosnippet" },
+    fmta(
+      [[
+        \subsubsection{<>}
       ]],
       {
         i(1),

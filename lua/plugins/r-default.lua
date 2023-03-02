@@ -158,7 +158,7 @@ return {
     opts = {
       highlight = {
         enable = true,
-        disable = { "latex", "markdown" },
+        disable = { "latex" },
         additional_vim_regex_highlighting = { "markdown" },
       },
     },

@@ -22,10 +22,16 @@ return {
   s({ trig = "thm", snippetType = "autosnippet" }, {
     t("theorem"),
   }, { condition = tex_utils.in_text }),
-  s({ trig = "pron", snippetType = "autosnippet" }, {
+  s({ trig = "propp", snippetType = "autosnippet" }, {
     t("proposition"),
   }, { condition = tex_utils.in_text }),
-  s({ trig = "exe", snippetType = "autosnippet" }, {
+  s({ trig = "deff", snippetType = "autosnippet" }, {
+    t("definition"),
+  }, { condition = tex_utils.in_text }),
+  s({ trig = "corr", snippetType = "autosnippet" }, {
+    t("corollary"),
+  }, { condition = tex_utils.in_text }),
+  s({ trig = "exaa", snippetType = "autosnippet" }, {
     t("example"),
   }, { condition = tex_utils.in_text }),
   s({ trig = "iee", snippetType = "autosnippet" }, {
