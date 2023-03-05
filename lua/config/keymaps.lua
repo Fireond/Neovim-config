@@ -51,8 +51,8 @@ map(
 )
 
 -- Spell check
-map({ "i", "n" }, "<C-d>", "<C-g>u<Esc>[s1z=`]a<C-g>u", { desc = "Check Spell" })
-map("n", "<leader>h", "a<C-g>u<Esc>[s1z=`]a<C-g>u<Esc>", { desc = "Check Spell" })
+map({ "i", "n" }, "<C-d>", "<C-g>u<Esc>[s1z=`]a<C-g>u", { desc = "Check spell" })
+map("n", "<leader>h", "a<C-g>u<Esc>[s1z=`]a<C-g>u<Esc>", { desc = "Check spell" })
 -- Lazy
 map("n", "<leader>L", "<cmd>:Lazy<cr>", { desc = "Lazy" })
 -- Save file
@@ -60,7 +60,9 @@ map("n", "<leader>w", "<cmd>:w<cr>", { desc = "Save" })
 -- Toggle terminal
 map("n", "<leader>t", "<cmd>ToggleTerm<cr>")
 -- Toggle transparent
-map("n", "<leader>ut", "<cmd>TransparentToggle<cr>")
+map("n", "<leader>ut", "<cmd>TransparentToggle<cr>", { desc = "Toggle transparent" })
+-- Toggle colorschem
+map("n", "<leader>uc", Util.telescope("colorscheme", { enable_preview = true }), { desc = "Colorscheme with preview" })
 map("n", "<leader>z", "zz", { desc = "Center this line" })
 
 -- Disable default keymaps

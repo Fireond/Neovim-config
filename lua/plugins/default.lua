@@ -168,6 +168,7 @@ return {
     keys = {
       { "<leader>gc", false },
       { "<leader>gs", false },
+      { "<leader>uC", false },
     },
   },
   {
