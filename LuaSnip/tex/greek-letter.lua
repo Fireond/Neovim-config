@@ -37,6 +37,9 @@ return {
   s({ trig = "eps", snippetType = "autosnippet", wordTrig = false }, {
     t("\\epsilon"),
   }, { condition = tex_utils.in_mathzone }),
+  s({ trig = "vps", snippetType = "autosnippet", wordTrig = false }, {
+    t("\\varepsilon"),
+  }, { condition = tex_utils.in_mathzone }),
   s({ trig = "Eps", snippetType = "autosnippet", wordTrig = false }, {
     t("\\Epsilon"),
   }, { condition = tex_utils.in_mathzone }),

@@ -242,7 +242,7 @@ return {
     { condition = tex_utils.in_mathzone }
   ),
   s(
-    { trig = ";r", snippetType = "autosnippet" },
+    { trig = ";r", wordTrig = false, snippetType = "autosnippet" },
     fmta("\\frac{<>}{<>}", {
       i(1),
       i(2),

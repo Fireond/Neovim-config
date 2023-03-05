@@ -15,8 +15,6 @@ local function map(mode, lhs, rhs, opts)
   end
 end
 
--- map({ "n", "v" }, "J", "5j", { desc = "J = 5j" })
--- map({ "n", "v" }, "K", "5k", { desc = "K = 5k" })
 -- Better movement
 map({ "n", "v", "o" }, "H", "^", { desc = "Use 'H' as '^'" })
 map({ "n", "v", "o" }, "L", "$", { desc = "Use 'L' as '$'" })
@@ -43,7 +41,8 @@ map("n", "<leader>gk", "<cmd>e ~/.config/nvim/lua/config/keymaps.lua<cr>", { des
 map("n", "<leader>gs", function()
   require("luasnip.loaders").edit_snippet_files({})
 end, { desc = "Go to luasnip config" })
-map("n", "<leader>gp", "<cmd>e ~/.config/nvim/lua/plugins/r-default.lua<cr>", { desc = "Go to plugins config" })
+map("n", "<leader>gp", "<cmd>e ~/.config/nvim/lua/plugins/default.lua<cr>", { desc = "Go to plugins config" })
+map("n", "<leader>gf", "<cmd>e ~/.config/nvim/ftplugin/tex.lua<cr>", { desc = "Go to file type plugin" })
 map(
   "n",
   "<leader>gl",
@@ -52,7 +51,7 @@ map(
 )
 
 -- Spell check
-map({ "i", "n" }, "<C-d>", "<C-g>u<Esc>[s1z=`]a<C-g>u")
+map({ "i", "n" }, "<C-d>", "<C-g>u<Esc>[s1z=`]a<C-g>u", { desc = "Check Spell" })
 map("n", "<leader>h", "a<C-g>u<Esc>[s1z=`]a<C-g>u<Esc>", { desc = "Check Spell" })
 -- Lazy
 map("n", "<leader>L", "<cmd>:Lazy<cr>", { desc = "Lazy" })
@@ -62,7 +61,7 @@ map("n", "<leader>w", "<cmd>:w<cr>", { desc = "Save" })
 map("n", "<leader>t", "<cmd>ToggleTerm<cr>")
 -- Toggle transparent
 map("n", "<leader>ut", "<cmd>TransparentToggle<cr>")
-map("n", "<leader>z", "zt", { desc = "Top this line" })
+map("n", "<leader>z", "zz", { desc = "Center this line" })
 
 -- Disable default keymaps
 local del = vim.keymap.del

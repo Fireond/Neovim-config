@@ -4,51 +4,51 @@ return {
     config = function()
       require("luasnip").config.set_config({
         enable_autosnippets = true,
-        store_selection_keys = "<Tab>",
+        store_selection_keys = "`",
       })
       require("luasnip.loaders.from_lua").load({ paths = "~/.config/nvim/LuaSnip" })
     end,
-    keys = {
-      {
-        "fj",
-        function()
-          return require("luasnip").jumpable(1) and "<Plug>luasnip-jump-next" or "fj"
-        end,
-        expr = true,
-        silent = true,
-        mode = "i",
-      },
-      {
-        "fj",
-        function()
-          require("luasnip").jump(1)
-        end,
-        mode = "s",
-      },
-      {
-        "fk",
-        function()
-          return require("luasnip").jumpable(1) and "<Plug>luasnip-jump-next" or "fk"
-        end,
-        expr = true,
-        silent = true,
-        mode = "i",
-      },
-      {
-        "fk",
-        function()
-          require("luasnip").jump(1)
-        end,
-        mode = "s",
-      },
-      {
-        "<C-l>",
-        function()
-          return require("luasnip.extras.select_choice")()
-        end,
-        mode = { "i", "s" },
-      },
-    },
+    keys = function()
+      return {
+        {
+          "fj",
+          function()
+            return require("luasnip").jumpable(1) and "<Plug>luasnip-jump-next" or "fj"
+          end,
+          expr = true,
+          silent = true,
+          mode = "i",
+        },
+        {
+          "fj",
+          function()
+            require("luasnip").jump(1)
+          end,
+          mode = "s",
+        },
+        {
+          "fk",
+          function()
+            require("luasnip").jump(-1)
+          end,
+          mode = { "i", "s" },
+        },
+        {
+          "<C-l>",
+          function()
+            return require("luasnip.extras.select_choice")()
+          end,
+          mode = { "i", "s" },
+        },
+        {
+          "<S-l>",
+          function()
+            return require("luasnip.extras.select_choice")()
+          end,
+          mode = { "i", "s" },
+        },
+      }
+    end,
   },
   {
     "hrsh7th/nvim-cmp",

@@ -185,6 +185,12 @@ return {
   s({ trig = "iso", wordTrig = false, snippetType = "autosnippet" }, {
     t("\\cong"),
   }, { condition = tex_utils.in_mathzone }),
+  s({ trig = "ihbar", wordTrig = false, snippetType = "autosnippet", priority = 2000 }, {
+    t("i\\hbar"),
+  }, { condition = tex_utils.in_mathzone }),
+  s({ trig = "hbar", wordTrig = false, snippetType = "autosnippet" }, {
+    t("\\hbar"),
+  }, { condition = tex_utils.in_mathzone }),
   s(
     { trig = "jk", wordTrig = false, snippetType = "autosnippet" },
     fmta(

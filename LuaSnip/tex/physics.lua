@@ -150,6 +150,22 @@ return {
     { condition = tex_utils.in_mathzone }
   ),
   s(
+    { trig = "comm", snippetType = "autosnippet" },
+    fmta("\\comm{<>}{<>}", {
+      i(1),
+      i(2),
+    }),
+    { condition = tex_utils.in_mathzone }
+  ),
+  s(
+    { trig = "acom", snippetType = "autosnippet" },
+    fmta("\\acomm{<>}{<>}", {
+      i(1),
+      i(2),
+    }),
+    { condition = tex_utils.in_mathzone }
+  ),
+  s(
     { trig = "ket", snippetType = "autosnippet", priority = 2000 },
     fmta("\\ket{<>}", {
       d(1, get_visual),
@@ -285,6 +301,15 @@ return {
   s(
     { trig = "qif", wordTrig = false, snippetType = "autosnippet" },
     fmta("\\qif", {}),
+    { condition = tex_utils.in_mathzone }
+  ),
+  s(
+    { trig = "dv", wordTrig = false, snippetType = "autosnippet" },
+    fmta("\\dv[<>]{<>}{<>}", {
+      i(1),
+      i(2),
+      i(3),
+    }),
     { condition = tex_utils.in_mathzone }
   ),
 }
