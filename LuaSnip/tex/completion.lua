@@ -156,7 +156,7 @@ return {
   s(
     { trig = "lim", regTrig = true, wordTrig = false, snippetType = "autosnippet" },
     fmta("\\lim\\limits_{<>}", {
-      i(1),
+      i(0),
     }),
     { condition = tex_utils.in_mathzone }
   ),
@@ -164,7 +164,7 @@ return {
     { trig = "sum", regTrig = true, wordTrig = false, snippetType = "autosnippet" },
     fmta("\\sum\\limits_{<>}^{<>}", {
       i(1),
-      i(2),
+      i(0),
     }),
     { condition = tex_utils.in_mathzone }
   ),
@@ -172,7 +172,7 @@ return {
     { trig = "pd", regTrig = true, wordTrig = false, snippetType = "autosnippet" },
     fmta("\\prod\\limits_{<>}^{<>}", {
       i(1),
-      i(2),
+      i(0),
     }),
     { condition = tex_utils.in_mathzone }
   ),
@@ -180,7 +180,7 @@ return {
     { trig = "bcap", regTrig = true, wordTrig = false, snippetType = "autosnippet", priority = 2000 },
     fmta("\\bigcap\\limits_{<>}^{<>}", {
       i(1),
-      i(2),
+      i(0),
     }),
     { condition = tex_utils.in_mathzone }
   ),
@@ -188,7 +188,7 @@ return {
     { trig = "bcup", regTrig = true, wordTrig = false, snippetType = "autosnippet", priority = 2000 },
     fmta("\\bigcup\\limits_{<>}^{<>}", {
       i(1),
-      i(2),
+      i(0),
     }),
     { condition = tex_utils.in_mathzone }
   ),
@@ -220,8 +220,8 @@ return {
     fmta("\\iint\\limits_{<>}^{<>}<> \\dd{<>}", {
       i(1, "-\\infty"),
       i(2, "\\infty"),
+      i(0),
       i(3),
-      i(4),
     }),
     { condition = tex_utils.in_mathzone }
   ),
@@ -229,8 +229,8 @@ return {
     { trig = "lint", regTrig = true, wordTrig = false, snippetType = "autosnippet", priority = 2000 },
     fmta("\\int\\limits_{<>}<> \\dd{<>}", {
       i(1, "\\infty"),
+      i(0),
       i(2),
-      i(3),
     }),
     { condition = tex_utils.in_mathzone }
   ),

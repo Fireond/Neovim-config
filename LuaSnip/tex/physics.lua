@@ -51,7 +51,7 @@ return {
   s(
     { trig = "qb", snippetType = "autosnippet" },
     fmta("\\qty(<>)", {
-      i(1),
+      i(0),
     }),
     { condition = tex_utils.in_mathzone }
   ),
@@ -65,7 +65,7 @@ return {
   s(
     { trig = "qB", snippetType = "autosnippet" },
     fmta("\\qty{<>}", {
-      i(1),
+      i(0),
     }),
     { condition = tex_utils.in_mathzone }
   ),
@@ -79,35 +79,35 @@ return {
   s(
     { trig = "qp", snippetType = "autosnippet" },
     fmta("\\qty[<>]", {
-      i(1),
+      i(0),
     }),
     { condition = tex_utils.in_mathzone }
   ),
   s(
     { trig = "mb", snippetType = "autosnippet" },
     fmta("\\mqty(<>)", {
-      i(1),
+      i(0),
     }),
     { condition = tex_utils.in_mathzone }
   ),
   s(
     { trig = "mB", snippetType = "autosnippet" },
     fmta("\\mqty{<>}", {
-      i(1),
+      i(0),
     }),
     { condition = tex_utils.in_mathzone }
   ),
   s(
     { trig = "mp", snippetType = "autosnippet" },
     fmta("\\mqty[<>]", {
-      i(1),
+      i(0),
     }),
     { condition = tex_utils.in_mathzone }
   ),
   s(
     { trig = "im", snippetType = "autosnippet" },
     fmta("\\imat{<>}", {
-      i(1),
+      i(0),
     }),
     { condition = tex_utils.in_mathzone }
   ),
@@ -116,7 +116,7 @@ return {
     fmta("\\xmat{<>}{<>}{<>}", {
       i(1),
       i(2),
-      i(3),
+      i(0),
     }),
     { condition = tex_utils.in_mathzone }
   ),
@@ -124,28 +124,28 @@ return {
     { trig = "zm", snippetType = "autosnippet" },
     fmta("\\zmat{<>}{<>}", {
       i(1),
-      i(2),
+      i(0),
     }),
     { condition = tex_utils.in_mathzone }
   ),
   s(
     { trig = "pm", snippetType = "autosnippet" },
     fmta("\\pmat{<>}", {
-      i(1),
+      i(0),
     }),
     { condition = tex_utils.in_mathzone }
   ),
   s(
     { trig = "dm", snippetType = "autosnippet" },
     fmta("\\dmat{<>}", {
-      i(1),
+      i(0),
     }),
     { condition = tex_utils.in_mathzone }
   ),
   s(
     { trig = "adm", snippetType = "autosnippet" },
     fmta("\\admat{<>}", {
-      i(1),
+      i(0),
     }),
     { condition = tex_utils.in_mathzone }
   ),
@@ -153,7 +153,7 @@ return {
     { trig = "comm", snippetType = "autosnippet" },
     fmta("\\comm{<>}{<>}", {
       i(1),
-      i(2),
+      i(0),
     }),
     { condition = tex_utils.in_mathzone }
   ),
@@ -161,7 +161,7 @@ return {
     { trig = "acom", snippetType = "autosnippet" },
     fmta("\\acomm{<>}{<>}", {
       i(1),
-      i(2),
+      i(0),
     }),
     { condition = tex_utils.in_mathzone }
   ),
@@ -175,7 +175,7 @@ return {
   s(
     { trig = "ket", snippetType = "autosnippet" },
     fmta("\\ket{<>}", {
-      i(1),
+      i(0),
     }),
     { condition = tex_utils.in_mathzone }
   ),
@@ -189,7 +189,7 @@ return {
   s(
     { trig = "bra", snippetType = "autosnippet" },
     fmta("\\bra{<>}", {
-      i(1),
+      i(0),
     }),
     { condition = tex_utils.in_mathzone }
   ),
@@ -203,7 +203,7 @@ return {
   s(
     { trig = "norm", snippetType = "autosnippet" },
     fmta("\\norm{<>}", {
-      i(1),
+      i(0),
     }),
     { condition = tex_utils.in_mathzone }
   ),
@@ -217,7 +217,7 @@ return {
   s(
     { trig = "abs", snippetType = "autosnippet" },
     fmta("\\abs{<>}", {
-      i(1),
+      i(0),
     }),
     { condition = tex_utils.in_mathzone }
   ),
@@ -225,21 +225,22 @@ return {
     { trig = "bk", snippetType = "autosnippet" },
     fmta("\\ip{<>}{<>}", {
       i(1),
-      i(2),
+      i(0),
     }),
     { condition = tex_utils.in_mathzone }
   ),
   s(
     { trig = "kb", snippetType = "autosnippet" },
-    fmta("\\op{<>}", {
+    fmta("\\op{<>}{<>}", {
       i(1),
+      i(0),
     }),
     { condition = tex_utils.in_mathzone }
   ),
   s(
     { trig = "ev", snippetType = "autosnippet" },
     fmta("\\ev{<>}", {
-      i(1),
+      i(0),
     }),
     { condition = tex_utils.in_mathzone }
   ),
@@ -247,7 +248,7 @@ return {
     { trig = "mev", snippetType = "autosnippet" },
     fmta("\\ev{<>}{<>}", {
       i(1),
-      i(2),
+      i(0),
     }),
     { condition = tex_utils.in_mathzone }
   ),
@@ -256,28 +257,28 @@ return {
     fmta("\\mel{<>}{<>}{<>}", {
       i(1),
       i(2),
-      i(3),
+      i(0),
     }),
     { condition = tex_utils.in_mathzone }
   ),
   s(
     { trig = "mdet", snippetType = "autosnippet" },
     fmta("\\mdet{<>}", {
-      i(1),
+      i(0),
     }),
     { condition = tex_utils.in_mathzone }
   ),
   s(
     { trig = "pr", wordTrig = false, snippetType = "autosnippet" },
     fmta("\\Pr{<>}", {
-      i(1),
+      i(0),
     }),
     { condition = tex_utils.in_mathzone }
   ),
   s(
     { trig = "ord", wordTrig = false, snippetType = "autosnippet" },
     fmta("\\order{<>}", {
-      i(1),
+      i(0),
     }),
     { condition = tex_utils.in_mathzone }
   ),
@@ -289,7 +290,7 @@ return {
   s(
     { trig = "qq", wordTrig = false, snippetType = "autosnippet" },
     fmta("\\qq{<>}", {
-      i(1),
+      i(0),
     }),
     { condition = tex_utils.in_mathzone }
   ),
@@ -308,7 +309,7 @@ return {
     fmta("\\dv[<>]{<>}{<>}", {
       i(1),
       i(2),
-      i(3),
+      i(0),
     }),
     { condition = tex_utils.in_mathzone }
   ),

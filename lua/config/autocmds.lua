@@ -16,3 +16,25 @@ augroup vimtex_event_focus
   au User VimtexEventViewReverse call s:TexFocusVim()
 augroup END
 ]])
+vim.cmd([[
+function! s:TexFocusVim() abort
+  " Replace `TERMINAL` with the name of your terminal application
+  " Example: execute "!open -a iTerm"  
+  " Example: execute "!open -a Alacritty"
+  silent execute "!open -a kitty"
+  redraw!
+endfunction
+augroup vimtex_event_focus
+  au!
+  au User VimtexEventViewReverse call s:TexFocusVim()
+augroup END
+]])
+
+local augroup = vim.api.nvim_create_augroup
+local autocmd = vim.api.nvim_create_autocmd
+
+-- Don't auto commenting new lines
+autocmd("BufEnter", {
+  pattern = "",
+  command = "set fo-=c fo-=r fo-=o",
+})

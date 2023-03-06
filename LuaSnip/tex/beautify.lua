@@ -69,7 +69,7 @@ return {
       ]],
       {
         i(1, "markname"),
-        i(2),
+        i(0),
       }
     ),
     { condition = tex_utils.in_tikz }
@@ -82,7 +82,7 @@ return {
       ]],
       {
         i(1, "markname"),
-        d(2, get_visual),
+        d(0, get_visual),
       }
     ),
     { condition = tex_utils.in_mathzone }
@@ -155,7 +155,7 @@ return {
       ]],
       {
         i(1, "red"),
-        i(2),
+        i(0),
       }
     ),
     { condition = tex_utils.in_mathzone }
@@ -168,7 +168,7 @@ return {
       ]],
       {
         i(1, "red"),
-        d(2, get_visual),
+        d(0, get_visual),
       }
     ),
     { condition = tex_utils.in_mathzone }
@@ -181,7 +181,7 @@ return {
       ]],
       {
         i(1, "red"),
-        i(2),
+        i(0),
       }
     ),
     { condition = tex_utils.in_text() }
@@ -194,7 +194,7 @@ return {
       ]],
       {
         i(1, "red"),
-        d(2, get_visual),
+        d(0, get_visual),
       }
     ),
     { condition = tex_utils.in_text() }

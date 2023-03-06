@@ -141,7 +141,7 @@ return {
   s(
     { trig = "bar", snippetType = "autosnippet" },
     fmta("\\overline{<>}", {
-      i(1),
+      i(0),
     }),
     { condition = tex_utils.in_mathzone }
   ),
@@ -155,7 +155,7 @@ return {
   s(
     { trig = "td", snippetType = "autosnippet" },
     fmta("\\ttlde{<>}", {
-      i(1),
+      i(0),
     }),
     { condition = tex_utils.in_mathzone }
   ),
@@ -169,7 +169,7 @@ return {
   s(
     { trig = "dot", snippetType = "autosnippet" },
     fmta("\\dot{<>}", {
-      i(1),
+      i(0),
     }),
     { condition = tex_utils.in_mathzone }
   ),
@@ -183,7 +183,7 @@ return {
   s(
     { trig = "vb", snippetType = "autosnippet" },
     fmta("\\vb{<>}", {
-      i(1),
+      i(0),
     }),
     { condition = tex_utils.in_mathzone }
   ),
@@ -197,7 +197,7 @@ return {
   s(
     { trig = "ivb", snippetType = "autosnippet" },
     fmta("\\vb*{<>}", {
-      i(1),
+      i(0),
     }),
     { condition = tex_utils.in_mathzone }
   ),
@@ -211,7 +211,7 @@ return {
   s(
     { trig = "hat", snippetType = "autosnippet" },
     fmta("\\hat{<>}", {
-      i(1),
+      i(0),
     }),
     { condition = tex_utils.in_mathzone }
   ),
@@ -225,7 +225,7 @@ return {
   s(
     { trig = "vec", snippetType = "autosnippet" },
     fmta("\\vec{<>}", {
-      i(1),
+      i(0),
     }),
     { condition = tex_utils.in_mathzone }
   ),
@@ -237,7 +237,7 @@ return {
   s(
     { trig = "gt", snippetType = "autosnippet" },
     fmta("\\gt{<>}", {
-      i(1),
+      i(0),
     }),
     { condition = tex_utils.in_mathzone }
   ),
@@ -245,7 +245,7 @@ return {
     { trig = ";r", wordTrig = false, snippetType = "autosnippet" },
     fmta("\\frac{<>}{<>}", {
       i(1),
-      i(2),
+      i(0),
     }),
     { condition = tex_utils.in_mathzone }
   ),
@@ -253,7 +253,7 @@ return {
     { trig = ";r", snippetType = "autosnippet", priority = 2000 },
     fmta("\\frac{<>}{<>}", {
       d(1, get_visual),
-      i(2),
+      i(0),
     }),
     { condition = tex_utils.in_mathzone }
   ),
@@ -261,40 +261,22 @@ return {
     { trig = "bi", snippetType = "autosnippet" },
     fmta("\\binom{<>}{<>}", {
       i(1),
-      i(2),
+      i(0),
     }),
     { condition = tex_utils.in_mathzone }
   ),
   s(
     { trig = "dd", snippetType = "autosnippet" },
     fmta("\\dd{<>}", {
-      i(1),
+      i(0),
     }),
     { condition = tex_utils.in_mathzone }
   ),
   s(
     { trig = "sq", wordTrig = false, snippetType = "autosnippet" },
     fmta("\\sqrt{<>}", {
-      i(1),
+      i(0),
     }),
-    { condition = tex_utils.in_mathzone }
-  ),
-  s(
-    { trig = "pp", snippetType = "autosnippet" },
-    fmta(
-      [[
-    \begin{pmatrix}
-    1 & <> & <>\\
-    0 & 1 & <>\\
-    0 & 0 & 1\\
-    \end{pmatrix}
-    ]],
-      {
-        i(1),
-        i(2),
-        i(3),
-      }
-    ),
     { condition = tex_utils.in_mathzone }
   ),
 }

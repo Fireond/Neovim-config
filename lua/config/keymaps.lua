@@ -15,7 +15,7 @@ local function map(mode, lhs, rhs, opts)
   end
 end
 
--- Better movement
+-- movement
 map({ "n", "v", "o" }, "H", "^", { desc = "Use 'H' as '^'" })
 map({ "n", "v", "o" }, "L", "$", { desc = "Use 'L' as '$'" })
 
@@ -24,15 +24,10 @@ map("n", "<", "v<g")
 map("n", ">", "v>g")
 
 -- buffers
-if Util.has("bufferline.nvim") then
-  map({ "n", "i" }, "<A-h>", "<cmd>BufferLineCyclePrev<cr>", { desc = "Prev buffer" })
-  map("n", "<leader>k", "<cmd>BufferLineCyclePrev<cr>", { desc = "Prev buffer" })
-  map({ "n", "i" }, "<A-l>", "<cmd>BufferLineCycleNext<cr>", { desc = "Next buffer" })
-  map("n", "<leader>j", "<cmd>BufferLineCycleNext<cr>", { desc = "Next buffer" })
-else
-  map({ "n", "i" }, "<A-h>", "<cmd>bprevious<cr>", { desc = "Prev buffer" })
-  map({ "n", "i" }, "<A-l>", "<cmd>bnext<cr>", { desc = "Next buffer" })
-end
+map({ "n", "i" }, "<A-h>", "<cmd>BufferLineCyclePrev<cr>", { desc = "Prev buffer" })
+map("n", "<leader>k", "<cmd>BufferLineCyclePrev<cr>", { desc = "Prev buffer" })
+map({ "n", "i" }, "<A-l>", "<cmd>BufferLineCycleNext<cr>", { desc = "Next buffer" })
+map("n", "<leader>j", "<cmd>BufferLineCycleNext<cr>", { desc = "Next buffer" })
 map("n", "<leader>D", "<C-W>c", { desc = "Delete window" })
 
 -- go to files
@@ -51,19 +46,37 @@ map(
 )
 
 -- Spell check
-map({ "i", "n" }, "<C-d>", "<C-g>u<Esc>[s1z=`]a<C-g>u", { desc = "Check spell" })
+-- map({ "i", "n" }, "<C-d>", "<C-g>u<Esc>[s1z=`]a<C-g>u", { desc = "Check spell" })
 map("n", "<leader>h", "a<C-g>u<Esc>[s1z=`]a<C-g>u<Esc>", { desc = "Check spell" })
--- Lazy
+map("n", "<leader>H", "a<C-g>u<Esc>[szg`]a<C-g>u<Esc>", { desc = "Add word to dictionary" })
+
 map("n", "<leader>L", "<cmd>:Lazy<cr>", { desc = "Lazy" })
--- Save file
 map("n", "<leader>w", "<cmd>:w<cr>", { desc = "Save" })
--- Toggle terminal
-map("n", "<leader>t", "<cmd>ToggleTerm<cr>")
--- Toggle transparent
+map("n", "<leader>t", "<cmd>ToggleTerm<cr>", { desc = "Toggle terminal" })
 map("n", "<leader>ut", "<cmd>TransparentToggle<cr>", { desc = "Toggle transparent" })
--- Toggle colorschem
 map("n", "<leader>uc", Util.telescope("colorscheme", { enable_preview = true }), { desc = "Colorscheme with preview" })
 map("n", "<leader>z", "zz", { desc = "Center this line" })
+map({ "n", "v" }, "<leader>a", "<cmd>keepjumps normal! ggVG<cr>", { desc = "Select all" })
+map("n", "<leader>+", "<C-a>", { desc = "Increase number" })
+map("n", "<leader>-", "<C-x>", { desc = "Decrease number" })
+
+-- ============= --
+-- Vimtex Keymaps --
+-- ============= --
+map({ "o", "x" }, "am", "<Plug>(vimtex-a$)", { desc = "Use `am` for the inline math text object" })
+map({ "o", "x" }, "im", "<Plug>(vimtex-i$)", { desc = "Use `im` for the inline math text object" })
+map({ "o", "x" }, "ai", "<Plug>(vimtex-am)", { desc = "Use `ai` for the item text text object" })
+map({ "o", "x" }, "ii", "<Plug>(vimtex-im)", { desc = "Use `ii` for the item text text object" })
+
+-- map({ "i", "n", "v" }, "<C-b>", function()
+--   require("knap").toggle_autopreviewing()
+-- end)
+-- map({ "i", "n", "v" }, "<C-x>", function()
+--   require("knap").forward_jump()
+-- end)
+-- map({ "n", "v" }, "<leader>K", function()
+--   require("knap").process_once()
+-- end)
 
 -- Disable default keymaps
 local del = vim.keymap.del

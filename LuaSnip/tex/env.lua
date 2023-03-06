@@ -46,7 +46,7 @@ return {
       \(<>\)
       ]],
       {
-        i(1),
+        i(0),
       }
     ),
     { condition = tex_utils.in_text }
@@ -251,7 +251,7 @@ return {
         \chapter{<>}
       ]],
       {
-        i(1),
+        i(0),
       }
     ),
     { condition = line_begin }
@@ -263,7 +263,7 @@ return {
         \section{<>}
       ]],
       {
-        i(1),
+        i(0),
       }
     ),
     { condition = line_begin }
@@ -275,7 +275,7 @@ return {
         \subsection{<>}
       ]],
       {
-        i(1),
+        i(0),
       }
     ),
     { condition = line_begin }
@@ -287,7 +287,7 @@ return {
         \subsubsection{<>}
       ]],
       {
-        i(1),
+        i(0),
       }
     ),
     { condition = line_begin }

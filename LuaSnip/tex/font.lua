@@ -48,7 +48,7 @@ return {
   s(
     { trig = "msf", snippetType = "autosnippet" },
     fmta("\\mathsf{<>}", {
-      i(1),
+      i(0),
     }),
     { condition = tex_utils.in_mathzone }
   ),
@@ -62,7 +62,7 @@ return {
   s(
     { trig = "cal", snippetType = "autosnippet" },
     fmta("\\mathcal{<>}", {
-      i(1),
+      i(0),
     }),
     { condition = tex_utils.in_mathzone }
   ),
@@ -76,7 +76,7 @@ return {
   s(
     { trig = "scr", snippetType = "autosnippet" },
     fmta("\\mathscr{<>}", {
-      i(1),
+      i(0),
     }),
     { condition = tex_utils.in_mathzone }
   ),
@@ -90,7 +90,7 @@ return {
   s(
     { trig = "mbb", snippetType = "autosnippet" },
     fmta("\\mathbb{<>}", {
-      i(1),
+      i(0),
     }),
     { condition = tex_utils.in_mathzone }
   ),
@@ -104,7 +104,7 @@ return {
   s(
     { trig = "mrm", snippetType = "autosnippet" },
     fmta("\\mathrm{<>}", {
-      i(1),
+      i(0),
     }),
     { condition = tex_utils.in_mathzone }
   ),
@@ -117,7 +117,7 @@ return {
   s(
     { trig = "tit", snippetType = "autosnippet" },
     fmta("\\textit{<>}", {
-      i(1),
+      i(0),
     })
   ),
   s(
@@ -129,7 +129,7 @@ return {
   s(
     { trig = "tbf", snippetType = "autosnippet" },
     fmta("\\textbf{<>}", {
-      i(1),
+      i(0),
     })
   ),
   s(
@@ -141,7 +141,7 @@ return {
   s(
     { trig = "tet", snippetType = "autosnippet" },
     fmta("\\text{<>}", {
-      i(1),
+      i(0),
     })
   ),
 }
