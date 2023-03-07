@@ -193,6 +193,22 @@ return {
     { condition = tex_utils.in_mathzone }
   ),
   s(
+    { trig = "bscap", regTrig = true, wordTrig = false, snippetType = "autosnippet", priority = 2000 },
+    fmta("\\bigsqcap\\limits_{<>}^{<>}", {
+      i(1),
+      i(0),
+    }),
+    { condition = tex_utils.in_mathzone }
+  ),
+  s(
+    { trig = "bscup", regTrig = true, wordTrig = false, snippetType = "autosnippet", priority = 2000 },
+    fmta("\\bigsqcup\\limits_{<>}^{<>}", {
+      i(1),
+      i(0),
+    }),
+    { condition = tex_utils.in_mathzone }
+  ),
+  s(
     { trig = "int", regTrig = true, wordTrig = false, snippetType = "autosnippet" },
     fmta("\\int_{<>}^{<>}<> \\dd{<>}", {
       i(1),

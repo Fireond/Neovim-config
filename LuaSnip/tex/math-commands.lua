@@ -229,8 +229,8 @@ return {
     }),
     { condition = tex_utils.in_mathzone }
   ),
-  s({ trig = "rr", snippetType = "autosnippet" }, fmta("\\Ran", {}), { condition = tex_utils.in_mathzone }),
-  s({ trig = "kk", snippetType = "autosnippet" }, fmta("\\Ker", {}), { condition = tex_utils.in_mathzone }),
+  s({ trig = "rr", snippetType = "autosnippet" }, fmta("\\ran", {}), { condition = tex_utils.in_mathzone }),
+  s({ trig = "kk", snippetType = "autosnippet" }, fmta("\\ker", {}), { condition = tex_utils.in_mathzone }),
   s({ trig = "rank", snippetType = "autosnippet" }, fmta("\\rank", {}), { condition = tex_utils.in_mathzone }),
   s({ trig = "dim", snippetType = "autosnippet" }, fmta("\\dim", {}), { condition = tex_utils.in_mathzone }),
   s({ trig = "det", snippetType = "autosnippet" }, fmta("\\det", {}), { condition = tex_utils.in_mathzone }),

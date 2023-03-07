@@ -14,7 +14,7 @@ vim.opt.undodir = "~/.tmp/nvim/undo//"
 -- ============= --
 vim.opt.conceallevel = 2
 vim.g.vimtex_view_method = "skim"
-vim.g.vimtex_quickfix_mode = 2
+vim.g.vimtex_quickfix_mode = 0
 vim.g.vimtex_quickfix_open_on_warning = 0
 vim.g.vimtex_compiler_silent = 1
 vim.g.vimtex_view_general_options = "-r @line @pdf @tex"
@@ -28,6 +28,7 @@ let g:vimtex_syntax_custom_cmds = [
   \ {'name': 'dd', 'mathmode': 1, 'concealchar': 'd'},
   \ {'name': 'cp', 'mathmode': 1, 'concealchar': 'x'},
   \ {'name': 'order', 'mathmode': 1, 'concealchar': 'O'},
+  \ {'name': 'unlhd', 'mathmode': 1, 'concealchar': '⊴'},
   \ {'name': 'rank', 'mathmode': 1, 'concealchar': 'r'},
   \ {'name': 'vb', 'mathmode': 1, 'conceal': 1, 'argstyle': 'boldunder'},
   \]

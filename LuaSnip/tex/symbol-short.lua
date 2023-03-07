@@ -191,6 +191,9 @@ return {
   s({ trig = "hbar", wordTrig = false, snippetType = "autosnippet" }, {
     t("\\hbar"),
   }, { condition = tex_utils.in_mathzone }),
+  s({ trig = "ns", wordTrig = false, snippetType = "autosnippet" }, {
+    t("\\unlhd"),
+  }, { condition = tex_utils.in_mathzone }),
   s(
     { trig = "jk", wordTrig = false, snippetType = "autosnippet" },
     fmta(
