@@ -6,9 +6,7 @@ vim.opt.timeoutlen = 150
 vim.opt.spell = true
 vim.opt.spelllang = { "en", "cjk" }
 vim.opt.spelloptions = "camel"
-vim.opt.backupdir = "~/.tmp/nvim/backup//"
-vim.opt.directory = "~/.tmp/nvim/swap//"
-vim.opt.undodir = "~/.tmp/nvim/undo//"
+vim.opt.backup = 0
 -- ============= --
 -- Vimtex Config --
 -- ============= --

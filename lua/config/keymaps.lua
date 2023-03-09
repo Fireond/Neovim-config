@@ -15,9 +15,8 @@ local function map(mode, lhs, rhs, opts)
   end
 end
 
-map("i", "<C-d>", function()
-  -- require("utils.latex").in_env("a")
-  local ts_utils = require("nvim-treesitter.ts_utils")
+map("n", "<leader>o", function()
+  require("utils.jumpLaTex").section()
 end)
 
 -- movement

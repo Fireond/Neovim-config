@@ -24,4 +24,5 @@ return {
       return snip.env.TM_SELECTED_TEXT[1] or {}
     end, {}) })
   ),
+  s({ trig = ";b", snippetType = "autosnippet" }, fmta("**<>**", i(1))),
 }
