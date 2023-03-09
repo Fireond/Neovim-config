@@ -2,7 +2,7 @@ return {
   {
     "xiyaowong/nvim-transparent",
     config = {
-      enable = true, -- boolean: enable transparent
+      enable = false, -- boolean: enable transparent
       extra_groups = {
         "BufferLineTabClose",
         "BufferlineBufferSelected",

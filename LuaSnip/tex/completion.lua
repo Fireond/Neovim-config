@@ -9,28 +9,7 @@ local fmt = require("luasnip.extras.fmt").fmt
 local fmta = require("luasnip.extras.fmt").fmta
 local rep = require("luasnip.extras").rep
 local line_begin = require("luasnip.extras.expand_conditions").line_begin
-
-local tex_utils = {}
-tex_utils.in_mathzone = function() -- math context detection
-  return vim.fn["vimtex#syntax#in_mathzone"]() == 1
-end
-tex_utils.in_text = function()
-  return not tex_utils.in_mathzone()
-end
-tex_utils.in_comment = function() -- comment detection
-  return vim.fn["vimtex#syntax#in_comment"]() == 1
-end
-tex_utils.in_env = function(name) -- generic environment detection
-  local is_inside = vim.fn["vimtex#env#is_inside"](name)
-  return (is_inside[1] > 0 and is_inside[2] > 0)
-end
--- A few concrete environments---adapt as needed
-tex_utils.in_equation = function() -- equation environment detection
-  return tex_utils.in_env("equation")
-end
-tex_utils.in_itemize = function() -- itemize environment detection
-  return tex_utils.in_env("itemize")
-end
+local tex = require("utils.latex")
 
 local get_visual = function(args, parent)
   if #parent.snippet.env.SELECT_RAW > 0 then
@@ -51,7 +30,7 @@ return {
         return snip.captures[2]
       end),
     }),
-    { condition = tex_utils.in_mathzone }
+    { condition = tex.in_mathzone }
   ),
   s(
     { trig = "([%a%)%]%}])_(%d)(%d)", regTrig = true, wordTrig = false, snippetType = "autosnippet" },
@@ -66,7 +45,7 @@ return {
         return snip.captures[3]
       end),
     }),
-    { condition = tex_utils.in_mathzone }
+    { condition = tex.in_mathzone }
   ),
   s(
     { trig = "([%a%)%]%}])(%a)%2", regTrig = true, wordTrig = false, snippetType = "autosnippet", priority = 100 },
@@ -78,7 +57,7 @@ return {
         return snip.captures[2]
       end),
     }),
-    { condition = tex_utils.in_mathzone }
+    { condition = tex.in_mathzone }
   ),
   s(
     { trig = "([%a%)%]%}])_(%a)(%a)%3", regTrig = true, wordTrig = false, snippetType = "autosnippet", priority = 2000 },
@@ -93,7 +72,7 @@ return {
         return snip.captures[3]
       end),
     }),
-    { condition = tex_utils.in_mathzone }
+    { condition = tex.in_mathzone }
   ),
   s(
     { trig = "(%d+)/", regTrig = true, wordTrig = false, snippetType = "autosnippet", priority = 100 },
@@ -103,7 +82,7 @@ return {
       end),
       i(1),
     }),
-    { condition = tex_utils.in_mathzone }
+    { condition = tex.in_mathzone }
   ),
   s(
     { trig = "(%a)/", regTrig = true, wordTrig = false, snippetType = "autosnippet", priority = 100 },
@@ -113,7 +92,7 @@ return {
       end),
       i(1),
     }),
-    { condition = tex_utils.in_mathzone }
+    { condition = tex.in_mathzone }
   ),
   s(
     { trig = "%((.+)%)/", regTrig = true, wordTrig = false, snippetType = "autosnippet" },
@@ -123,7 +102,7 @@ return {
       end),
       i(1),
     }),
-    { condition = tex_utils.in_mathzone }
+    { condition = tex.in_mathzone }
   ),
   s(
     { trig = "(\\%a+)/", regTrig = true, wordTrig = false, snippetType = "autosnippet", priority = 2000 },
@@ -133,7 +112,7 @@ return {
       end),
       i(1),
     }),
-    { condition = tex_utils.in_mathzone }
+    { condition = tex.in_mathzone }
   ),
   s(
     { trig = "(\\%a+%{%a+%})/", regTrig = true, wordTrig = false, snippetType = "autosnippet", priority = 3000 },
@@ -143,7 +122,7 @@ return {
       end),
       i(1),
     }),
-    { condition = tex_utils.in_mathzone }
+    { condition = tex.in_mathzone }
   ),
   s(
     { trig = "\\%)(%a)", regTrig = true, wordTrig = false, snippetType = "autosnippet", priority = 2000 },
@@ -158,7 +137,7 @@ return {
     fmta("\\lim\\limits_{<>}", {
       i(0),
     }),
-    { condition = tex_utils.in_mathzone }
+    { condition = tex.in_mathzone }
   ),
   s(
     { trig = "sum", regTrig = true, wordTrig = false, snippetType = "autosnippet" },
@@ -166,7 +145,7 @@ return {
       i(1),
       i(0),
     }),
-    { condition = tex_utils.in_mathzone }
+    { condition = tex.in_mathzone }
   ),
   s(
     { trig = "pd", regTrig = true, wordTrig = false, snippetType = "autosnippet" },
@@ -174,7 +153,7 @@ return {
       i(1),
       i(0),
     }),
-    { condition = tex_utils.in_mathzone }
+    { condition = tex.in_mathzone }
   ),
   s(
     { trig = "bcap", regTrig = true, wordTrig = false, snippetType = "autosnippet", priority = 2000 },
@@ -182,7 +161,7 @@ return {
       i(1),
       i(0),
     }),
-    { condition = tex_utils.in_mathzone }
+    { condition = tex.in_mathzone }
   ),
   s(
     { trig = "bcup", regTrig = true, wordTrig = false, snippetType = "autosnippet", priority = 2000 },
@@ -190,7 +169,7 @@ return {
       i(1),
       i(0),
     }),
-    { condition = tex_utils.in_mathzone }
+    { condition = tex.in_mathzone }
   ),
   s(
     { trig = "bscap", regTrig = true, wordTrig = false, snippetType = "autosnippet", priority = 2000 },
@@ -198,7 +177,7 @@ return {
       i(1),
       i(0),
     }),
-    { condition = tex_utils.in_mathzone }
+    { condition = tex.in_mathzone }
   ),
   s(
     { trig = "bscup", regTrig = true, wordTrig = false, snippetType = "autosnippet", priority = 2000 },
@@ -206,7 +185,7 @@ return {
       i(1),
       i(0),
     }),
-    { condition = tex_utils.in_mathzone }
+    { condition = tex.in_mathzone }
   ),
   s(
     { trig = "int", regTrig = true, wordTrig = false, snippetType = "autosnippet" },
@@ -216,7 +195,7 @@ return {
       i(0),
       i(3),
     }),
-    { condition = tex_utils.in_mathzone }
+    { condition = tex.in_mathzone }
   ),
   s(
     { trig = "2int", regTrig = true, wordTrig = false, snippetType = "autosnippet", priority = 2000 },
@@ -229,7 +208,7 @@ return {
       i(5),
       i(6),
     }),
-    { condition = tex_utils.in_mathzone }
+    { condition = tex.in_mathzone }
   ),
   s(
     { trig = "iint", regTrig = true, wordTrig = false, snippetType = "autosnippet", priority = 2000 },
@@ -239,7 +218,7 @@ return {
       i(0),
       i(3),
     }),
-    { condition = tex_utils.in_mathzone }
+    { condition = tex.in_mathzone }
   ),
   s(
     { trig = "lint", regTrig = true, wordTrig = false, snippetType = "autosnippet", priority = 2000 },
@@ -248,6 +227,6 @@ return {
       i(0),
       i(2),
     }),
-    { condition = tex_utils.in_mathzone }
+    { condition = tex.in_mathzone }
   ),
 }

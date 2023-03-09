@@ -23,6 +23,15 @@ return {
           ["<C-e>"] = cmp.mapping.abort(),
           ["<C-f>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
           ["<S-f>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+          ["<C-l>"] = cmp.mapping({
+            i = function(fallback)
+              if require("luasnip").choice_active() then
+                require("luasnip.extras.select_choice")()
+              else
+                fallback()
+              end
+            end,
+          }),
         }),
         sources = cmp.config.sources({
           { name = "nvim_lsp" },

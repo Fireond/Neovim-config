@@ -15,6 +15,11 @@ local function map(mode, lhs, rhs, opts)
   end
 end
 
+map("i", "<C-d>", function()
+  -- require("utils.latex").in_env("a")
+  local ts_utils = require("nvim-treesitter.ts_utils")
+end)
+
 -- movement
 map({ "n", "v", "o" }, "H", "^", { desc = "Use 'H' as '^'" })
 map({ "n", "v", "o" }, "L", "$", { desc = "Use 'L' as '$'" })
@@ -29,6 +34,12 @@ map("n", "<leader>k", "<cmd>BufferLineCyclePrev<cr>", { desc = "Prev buffer" })
 map({ "n", "i" }, "<A-l>", "<cmd>BufferLineCycleNext<cr>", { desc = "Next buffer" })
 map("n", "<leader>j", "<cmd>BufferLineCycleNext<cr>", { desc = "Next buffer" })
 map("n", "<leader>D", "<C-W>c", { desc = "Delete window" })
+
+-- windows resize
+map("n", "<Up>", "<cmd>resize +2<cr>", { desc = "Increase window height" })
+map("n", "<Down>", "<cmd>resize -2<cr>", { desc = "Decrease window height" })
+map("n", "<Left>", "<cmd>vertical resize -2<cr>", { desc = "Decrease window width" })
+map("n", "<Right>", "<cmd>vertical resize +2<cr>", { desc = "Increase window width" })
 
 -- go to files
 map("n", "<leader>go", "<cmd>e ~/.config/nvim/lua/config/options.lua<cr>", { desc = "Go to options config" })
@@ -64,10 +75,10 @@ map("n", "<leader>-", "<C-x>", { desc = "Decrease number" })
 -- ============= --
 -- Vimtex Keymaps --
 -- ============= --
-map({ "o", "x" }, "am", "<Plug>(vimtex-a$)", { desc = "Use `am` for the inline math text object" })
-map({ "o", "x" }, "im", "<Plug>(vimtex-i$)", { desc = "Use `im` for the inline math text object" })
-map({ "o", "x" }, "ai", "<Plug>(vimtex-am)", { desc = "Use `ai` for the item text text object" })
-map({ "o", "x" }, "ii", "<Plug>(vimtex-im)", { desc = "Use `ii` for the item text text object" })
+-- map({ "o", "x" }, "am", "<Plug>(vimtex-a$)", { desc = "Use `am` for the inline math text object" })
+-- map({ "o", "x" }, "im", "<Plug>(vimtex-i$)", { desc = "Use `im` for the inline math text object" })
+-- map({ "o", "x" }, "ai", "<Plug>(vimtex-am)", { desc = "Use `ai` for the item text text object" })
+-- map({ "o", "x" }, "ii", "<Plug>(vimtex-im)", { desc = "Use `ii` for the item text text object" })
 
 -- map({ "i", "n", "v" }, "<C-b>", function()
 --   require("knap").toggle_autopreviewing()
