@@ -11,5 +11,5 @@ return {
       i(1, "module"),
     })
   ),
-  ls.parser.parse_snippet("lm", "local M = {}\n\nfunction M.setup()\n  $1 \nend\n\nreturn M"),
+  ls.parser.parse_snippet("lm", "local M = {}\n\n$1 \n\nreturn M"),
 }

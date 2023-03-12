@@ -174,6 +174,9 @@ return {
   s({ trig = "ns", wordTrig = false, snippetType = "autosnippet" }, {
     t("\\unlhd"),
   }, { condition = tex.in_mathzone }),
+  s({ trig = "eqv", wordTrig = false, snippetType = "autosnippet" }, {
+    t("\\equiv"),
+  }, { condition = tex.in_mathzone }),
   s(
     { trig = "jk", wordTrig = false, snippetType = "autosnippet" },
     fmta(

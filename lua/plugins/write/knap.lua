@@ -17,5 +17,6 @@ return {
         desc = "Knap forward jump",
       },
     },
+    ft = { "tex", "markdown" },
   },
 }

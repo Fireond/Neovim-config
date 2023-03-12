@@ -15,10 +15,6 @@ local function map(mode, lhs, rhs, opts)
   end
 end
 
-map("n", "<leader>o", function()
-  require("utils.jumpLaTex").section()
-end)
-
 -- movement
 map({ "n", "v", "o" }, "H", "^", { desc = "Use 'H' as '^'" })
 map({ "n", "v", "o" }, "L", "$", { desc = "Use 'L' as '$'" })
@@ -46,14 +42,15 @@ map("n", "<leader>gk", "<cmd>e ~/.config/nvim/lua/config/keymaps.lua<cr>", { des
 map("n", "<leader>gs", function()
   require("luasnip.loaders").edit_snippet_files({})
 end, { desc = "Go to luasnip config" })
-map("n", "<leader>gp", "<cmd>e ~/.config/nvim/lua/plugins/default.lua<cr>", { desc = "Go to plugins config" })
-map("n", "<leader>gf", "<cmd>e ~/.config/nvim/ftplugin/tex.lua<cr>", { desc = "Go to file type plugin" })
-map(
-  "n",
-  "<leader>gl",
-  "<cmd>e ~/.local/share/nvim/lazy/LazyVim/lua/lazyvim/init.lua<cr>",
-  { desc = "Go to lazyvim config" }
-)
+map("n", "<leader>gp", function()
+  require("neo-tree.command").execute({ toggle = true, dir = "/Users/hanyu_yan/.config/nvim/lua/plugins" })
+end, { desc = "Go to plugins config" })
+map("n", "<leader>gl", function()
+  require("neo-tree.command").execute({
+    toggle = true,
+    dir = "/Users/hanyu_yan/.local/share/nvim/lazy/LazyVim/lua/lazyvim/",
+  })
+end, { desc = "Go to lazyvim config" })
 
 -- Spell check
 -- map({ "i", "n" }, "<C-d>", "<C-g>u<Esc>[s1z=`]a<C-g>u", { desc = "Check spell" })
@@ -62,14 +59,14 @@ map("n", "<leader>H", "a<C-g>u<Esc>[szg`]a<C-g>u<Esc>", { desc = "Add word to di
 
 map("n", "<leader>L", "<cmd>:Lazy<cr>", { desc = "Lazy" })
 map("n", "<leader>w", "<cmd>:w<cr>", { desc = "Save" })
-map("n", "<leader>t", "<cmd>ToggleTerm<cr>", { desc = "Toggle terminal" })
+map({ "n", "v", "t" }, "<leader>;", "<cmd>ToggleTerm<cr>", { desc = "Toggle terminal" })
 map("n", "<leader>ut", "<cmd>TransparentToggle<cr>", { desc = "Toggle transparent" })
 map("n", "<leader>uc", Util.telescope("colorscheme", { enable_preview = true }), { desc = "Colorscheme with preview" })
 map("n", "<leader>ua", "<cmd>ASToggle<cr>", { desc = "Toggle auto save" })
-map("n", "<leader>z", "zz", { desc = "Center this line" })
 map({ "n", "v" }, "<leader>a", "<cmd>keepjumps normal! ggVG<cr>", { desc = "Select all" })
 map("n", "<leader>+", "<C-a>", { desc = "Increase number" })
 map("n", "<leader>-", "<C-x>", { desc = "Decrease number" })
+map("n", "<leader>z", "<cmd>ZenMode<cr>", { desc = "Toggle zen mode" })
 
 -- ============= --
 -- Vimtex Keymaps --

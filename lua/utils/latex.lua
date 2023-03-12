@@ -38,6 +38,19 @@ M.in_text = function()
   return true
 end
 
+M.in_latex = function()
+  local node = ts_utils.get_node_at_cursor()
+  while node do
+    if node:type() == "latex_block" then
+      print(true)
+      return true
+    end
+    node = node:parent()
+  end
+  print(false)
+  return false
+end
+
 M.in_mathzone = function()
   return not M.in_text()
 end

@@ -16,13 +16,9 @@ local get_visual = function(args, parent)
     return sn(nil, i(1))
   end
 end
+local tex = require("utils.latex")
 
 return {
-  s(
-    "link",
-    fmta("[<>](<>)", { i(1), f(function(_, snip)
-      return snip.env.TM_SELECTED_TEXT[1] or {}
-    end, {}) })
-  ),
-  s({ trig = ";b", snippetType = "autosnippet" }, fmta("**<>**", i(1))),
+  s({ trig = "ii", snippetType = "autosnippet" }, fmta("$<>$", i(1))),
+  s({ trig = "dd", snippetType = "autosnippet" }, fmta("$$\n<>\n$$", i(1))),
 }

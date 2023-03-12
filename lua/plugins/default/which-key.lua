@@ -17,7 +17,7 @@ return {
         ["<leader>s"] = { name = "+search" },
         ["<leader>u"] = { name = "+ui" },
         ["<leader>x"] = { name = "+diagnostics/quickfix" },
-        ["<leader>l"] = { name = "+vimtex" },
+        ["<leader>l"] = { name = "+minimap" },
         ["<leader>sn"] = { name = "+noice" },
         ["<leader>p"] = { name = "+preview" },
       }

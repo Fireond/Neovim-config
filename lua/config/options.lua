@@ -4,10 +4,12 @@ vim.opt.spelllang = { "en", "cjk" }
 vim.opt.spelloptions = "camel"
 vim.opt.backup = false
 
+vim.g.gruvbox_material_background = "hard"
+
 -- Knap Config
 
 vim.g.knap_settings = {
-  delay = 500,
+  delay = 150,
 }
 -- ============= --
 -- Vimtex Config --

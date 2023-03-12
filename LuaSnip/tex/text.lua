@@ -22,9 +22,6 @@ return {
   s({ trig = "deff", snippetType = "autosnippet" }, {
     t("definition"),
   }, { condition = tex.in_text }),
-  s({ trig = "corr", snippetType = "autosnippet" }, {
-    t("corollary"),
-  }, { condition = tex.in_text }),
   s({ trig = "exaa", snippetType = "autosnippet" }, {
     t("example"),
   }, { condition = tex.in_text }),

@@ -12,7 +12,7 @@ local tex = require("utils.latex")
 
 return {
   s(
-    { trig = "ii", snippetType = "autosnippet" },
+    { trig = "ii", wordTrig = false, snippetType = "autosnippet" },
     fmta(
       [[
       \(<>\)

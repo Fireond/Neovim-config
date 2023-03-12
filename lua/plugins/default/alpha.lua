@@ -13,7 +13,7 @@ return {
                         ⟦ 𝔽𝕚𝕣𝕖𝕠𝕟𝕕 ⟧                      
       ]]
 
-      dashboard.section.header.val = vim.split(logo, "\n")
+      dashboard.section.header.val = vim.split(logo, "\n", {})
       dashboard.section.buttons.val = {
         dashboard.button("f", " " .. " Find file", ":Telescope find_files <CR>"),
         dashboard.button("n", " " .. " New file", ":ene <BAR> startinsert <CR>"),
