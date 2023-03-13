@@ -93,6 +93,12 @@ return {
   s({ trig = "||", wordTrig = false, snippetType = "autosnippet" }, {
     t("\\mid"),
   }, { condition = tex.in_mathzone }),
+  s({ trig = "mid", wordTrig = false, snippetType = "autosnippet" }, {
+    t("\\mid"),
+  }, { condition = tex.in_mathzone }),
+  s({ trig = "nmid", wordTrig = false, snippetType = "autosnippet" }, {
+    t("\\nmid"),
+  }, { condition = tex.in_mathzone }),
   s({ trig = "sr", wordTrig = false, snippetType = "autosnippet" }, {
     t("^2"),
   }, { condition = tex.in_mathzone }),

@@ -3,6 +3,7 @@ vim.opt.spell = true
 vim.opt.spelllang = { "en", "cjk" }
 vim.opt.spelloptions = "camel"
 vim.opt.backup = false
+vim.g.tex_flavor = "latex"
 
 vim.g.gruvbox_material_background = "hard"
 
