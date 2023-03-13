@@ -3,7 +3,7 @@ return {
     "nvim-treesitter/nvim-treesitter",
     opts = function()
       return {
-        highlight = { enable = true, additional_vim_regex_highlighting = { "markdown" } },
+        highlight = { enable = true },
         indent = { enable = true, disable = { "python" } },
         context_commentstring = { enable = true, enable_autocmd = false },
         ensure_installed = {
