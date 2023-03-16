@@ -21,6 +21,15 @@ end
 
 return {
   s(
+    { trig = "(%a);", regTrig = true, wordTrig = false, snippetType = "autosnippet" },
+    fmta("\\hat{<>}", {
+      f(function(_, snip)
+        return snip.captures[1]
+      end),
+    }),
+    { condition = tex.in_mathzone }
+  ),
+  s(
     { trig = "([%a%)%]%}])(%d)", regTrig = true, wordTrig = false, snippetType = "autosnippet" },
     fmta("<>_<>", {
       f(function(_, snip)

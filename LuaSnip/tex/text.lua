@@ -4,6 +4,9 @@ local t = ls.text_node
 local tex = require("utils.latex")
 
 return {
+  s({ trig = "dps", snippetType = "autosnippet" }, {
+    t("\\displaystyle"),
+  }, { condition = tex.in_mathzone }),
   s({ trig = "%%", snippetType = "autosnippet" }, {
     t("\\%"),
   }, { condition = tex.in_text }),

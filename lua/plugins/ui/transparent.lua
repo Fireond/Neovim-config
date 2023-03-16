@@ -15,10 +15,10 @@ return {
       ignore_linked_group = true, -- boolean: don't clear a group that links to another group
     },
   },
-  -- {
-  --   "rcarriga/nvim-notify",
-  --   config = {
-  --     background_colour = "#000000",
-  --   },
-  -- },
+  {
+    "rcarriga/nvim-notify",
+    config = {
+      background_colour = "#000000",
+    },
+  },
 }

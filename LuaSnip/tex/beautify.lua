@@ -2,6 +2,7 @@ local ls = require("luasnip")
 local s = ls.snippet
 local sn = ls.snippet_node
 local t = ls.text_node
+local f = ls.function_node
 local i = ls.insert_node
 local d = ls.dynamic_node
 local fmta = require("luasnip.extras.fmt").fmta
@@ -66,8 +67,8 @@ return {
     { trig = "lu", snippetType = "autosnippet", dscr = "Left up annotate" },
     fmta(
       [[
-      \path (<>.north) ++ (0,1em) node[anchor=south east,color=<>!67] (<>node){<>};
-      \draw [color=<>!57](<>.north) |- ([xshift=-0.3ex,color=<>]<>node.south west);
+      \path (<>.north) ++ (0,1em) node[anchor=south east,color=<>!67] (<>_node){<>};
+      \draw [color=<>!57](<>.north) |- ([xshift=-0.3ex,color=<>]<>_node.south west);
       ]],
       {
         i(1, "markname"),
@@ -86,8 +87,8 @@ return {
     { trig = "rd", snippetType = "autosnippet", dscr = "Right down annotate" },
     fmta(
       [[
-      \path (<>.south) ++ (0,-0.8em) node[anchor=north west,color=<>!67] (<>node){<>};
-      \draw [color=<>!57](<>.south) |- ([xshift=-0.3ex,color=<>]<>node.south east);
+      \path (<>.south) ++ (0,-0.8em) node[anchor=north west,color=<>!67] (<>_node){<>};
+      \draw [color=<>!57](<>.south) |- ([xshift=-0.3ex,color=<>]<>_node.south east);
       ]],
       {
         i(1, "markname"),
@@ -106,8 +107,8 @@ return {
     { trig = "ld", snippetType = "autosnippet", dscr = "Left down annotate" },
     fmta(
       [[
-      \path (<>.south) ++ (0,-0.8em) node[anchor=north east,color=<>!67] (<>node){<>};
-      \draw [color=<>!57](<>.south) |- ([xshift=-0.3ex,color=<>]<>node.south west);
+      \path (<>.south) ++ (0,-0.8em) node[anchor=north east,color=<>!67] (<>_node){<>};
+      \draw [color=<>!57](<>.south) |- ([xshift=-0.3ex,color=<>]<>_node.south west);
       ]],
       {
         i(1, "markname"),
@@ -143,7 +144,9 @@ return {
       ]],
       {
         i(1, "red"),
-        d(2, get_visual),
+        f(function(_, snip)
+          return snip.env.TM_SELECTED_TEXT[1] or {}
+        end, {}),
       }
     ),
     { condition = tex.in_mathzone }
@@ -169,7 +172,9 @@ return {
       ]],
       {
         i(1, "red"),
-        d(2, get_visual),
+        f(function(_, snip)
+          return snip.env.TM_SELECTED_TEXT[1] or {}
+        end, {}),
       }
     ),
     { condition = tex.in_text }

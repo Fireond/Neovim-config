@@ -124,7 +124,7 @@ return {
         i(0),
       }
     ),
-    { condition = tex.in_mathzone }
+    { condition = tex.in_text * line_begin }
   ),
   s(
     { trig = "dcase", snippetType = "autosnippet", priority = 2000 },

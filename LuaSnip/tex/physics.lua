@@ -293,4 +293,12 @@ return {
     }),
     { condition = tex.in_mathzone }
   ),
+  s(
+    { trig = "pv", wordTrig = false, snippetType = "autosnippet" },
+    fmta("\\pdv{<>}{<>}", {
+      i(1),
+      i(0),
+    }),
+    { condition = tex.in_mathzone }
+  ),
 }

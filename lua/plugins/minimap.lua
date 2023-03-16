@@ -11,6 +11,7 @@ return {
         },
       })
     end,
+    ft = "tex",
     -- keys = {
     --   { "<leader>lb", desc = "Latex begins" },
     --   { "<leader>lc", desc = "Latex parts" },
