@@ -53,7 +53,7 @@ map("n", "<leader>gl", function()
 end, { desc = "Go to lazyvim config" })
 
 -- Spell check
--- map({ "i", "n" }, "<C-d>", "<C-g>u<Esc>[s1z=`]a<C-g>u", { desc = "Check spell" })
+map("i", "<C-d>", "<C-g>u<Esc>[s1z=`]a<C-g>u", { desc = "Check spell" })
 map("n", "<leader>h", "a<C-g>u<Esc>[s1z=`]a<C-g>u<Esc>", { desc = "Check spell" })
 map("n", "<leader>H", "a<C-g>u<Esc>[szg`]a<C-g>u<Esc>", { desc = "Add word to dictionary" })
 
@@ -67,6 +67,9 @@ map({ "n", "v" }, "<leader>a", "<cmd>keepjumps normal! ggVG<cr>", { desc = "Sele
 map("n", "<leader>+", "<C-a>", { desc = "Increase number" })
 map("n", "<leader>-", "<C-x>", { desc = "Decrease number" })
 map("n", "<leader>z", "<cmd>ZenMode<cr>", { desc = "Toggle zen mode" })
+map("n", "<leader>fp", function()
+  require("telescope").extensions.neoclip.default()
+end, { desc = "Find clips" })
 
 -- ============= --
 -- Vimtex Keymaps --
