@@ -5,8 +5,6 @@ vim.opt.spelloptions = "camel"
 vim.opt.backup = false
 vim.g.tex_flavor = "latex"
 
-vim.g.gruvbox_material_background = "hard"
-
 -- Knap Config
 
 vim.g.knap_settings = {
