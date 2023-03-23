@@ -301,4 +301,5 @@ return {
     }),
     { condition = tex.in_mathzone }
   ),
+  s({ trig = "tr", wordTrig = false, snippetType = "autosnippet" }, fmta("\\tr", {}), { condition = tex.in_mathzone }),
 }

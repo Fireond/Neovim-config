@@ -11,8 +11,5 @@ return {
   { "luisiacc/gruvbox-baby", name = "gruvbox-baby" },
   {
     "LazyVim/LazyVim",
-    opts = {
-      colorscheme = "tokyonight-night",
-    },
   },
 }

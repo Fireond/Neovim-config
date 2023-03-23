@@ -34,4 +34,16 @@ return {
   s({ trig = "stt", snippetType = "autosnippet" }, {
     t("s.t."),
   }, { condition = tex.in_text }),
+  s({ trig = "iso" }, {
+    t("isomorphic"),
+  }, { condition = tex.in_text }),
+  s({ trig = "iso" }, {
+    t("isomorphism"),
+  }, { condition = tex.in_text }),
+  s({ trig = "homo" }, {
+    t("homomorphism"),
+  }, { condition = tex.in_text }),
+  s({ trig = "homo" }, {
+    t("homomorphic"),
+  }, { condition = tex.in_text }),
 }

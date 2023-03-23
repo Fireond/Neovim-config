@@ -183,6 +183,15 @@ return {
   s({ trig = "eqv", wordTrig = false, snippetType = "autosnippet" }, {
     t("\\equiv"),
   }, { condition = tex.in_mathzone }),
+  s({ trig = "##", wordTrig = false, snippetType = "autosnippet" }, {
+    t("\\#"),
+  }, { condition = tex.in_mathzone }),
+  s({ trig = "ell", wordTrig = false, snippetType = "autosnippet", priority = 2000 }, {
+    t("\\ell"),
+  }, { condition = tex.in_mathzone }),
+  s({ trig = "ot", wordTrig = false, snippetType = "autosnippet", priority = 2000 }, {
+    t("\\otimes"),
+  }, { condition = tex.in_mathzone }),
   s(
     { trig = "jk", wordTrig = false, snippetType = "autosnippet" },
     fmta(

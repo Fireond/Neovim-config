@@ -8,7 +8,7 @@ vim.g.tex_flavor = "latex"
 -- Knap Config
 
 vim.g.knap_settings = {
-  delay = 150,
+  delay = 500,
 }
 -- ============= --
 -- Vimtex Config --
