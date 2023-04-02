@@ -46,4 +46,16 @@ return {
   s({ trig = "homo" }, {
     t("homomorphic"),
   }, { condition = tex.in_text }),
+  s({ trig = "psp", snippetType = "autosnippet" }, {
+    t("\\(p\\)-subgroup"),
+  }, { condition = tex.in_text }),
+  s({ trig = "pgp", snippetType = "autosnippet" }, {
+    t("\\(p\\)-subgroup"),
+  }, { condition = tex.in_text }),
+  s({ trig = "spsp", snippetType = "autosnippet" }, {
+    t("Sylow \\(p\\)-subgroup"),
+  }, { condition = tex.in_text }),
+  s({ trig = "=>", snippetType = "autosnippet" }, {
+    t("\\(\\implies\\)"),
+  }, { condition = tex.in_text }),
 }

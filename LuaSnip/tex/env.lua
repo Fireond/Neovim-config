@@ -116,9 +116,9 @@ return {
     { trig = "box", snippetType = "autosnippet" },
     fmta(
       [[
-      \begin{box}
+      \begin{framed}
         <>
-      \end{box}
+      \end{framed}
       ]],
       {
         i(0),

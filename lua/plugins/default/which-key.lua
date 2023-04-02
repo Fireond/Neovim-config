@@ -28,8 +28,8 @@ return {
         -- list of mode / prefixes that should never be hooked by WhichKey
         -- this is mostly relevant for key maps that start with a native binding
         -- most people should not need to change this
-        i = { "f", "j" },
-        v = { "f", "k" },
+        i = { "f", "j", "k" },
+        v = { "f", "j", "k" },
       },
     },
   },
