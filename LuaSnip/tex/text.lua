@@ -1,6 +1,9 @@
 local ls = require("luasnip")
+local c = ls.choice_node
 local s = ls.snippet
 local t = ls.text_node
+local i = ls.insert_node
+local fmta = require("luasnip.extras.fmt").fmta
 local tex = require("utils.latex")
 
 return {
@@ -58,4 +61,26 @@ return {
   s({ trig = "=>", snippetType = "autosnippet" }, {
     t("\\(\\implies\\)"),
   }, { condition = tex.in_text }),
+  s(
+    { trig = "homework" },
+    fmta(
+      [[
+    \documentclass{article}
+    \newcommand{\Class}{<>}
+    \newcommand{\Title}{Homework <>}
+    \input{~/Documents/Latex/Package_elegantbook.tex}
+    \input{~/Documents/Latex/Sample_Homework.tex}
+    \begin{document}
+    \begin{spacing}{1.1}
+    \maketitle \thispagestyle{empty}
+      
+      <>
+      
+    \end{spacing}
+    \end{document}
+    ]],
+      { c(1, { t("Abstract Algebra"), t("Mathematics for Artificial Intelligence") }), i(2, "number"), i(0) }
+    ),
+    { condition = tex.in_text }
+  ),
 }

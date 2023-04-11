@@ -10,6 +10,11 @@ vim.g.tex_flavor = "latex"
 vim.g.knap_settings = {
   delay = 500,
 }
+
+-- jukit Config
+
+vim.g.jukit_mappings = 0
+
 -- ============= --
 -- Vimtex Config --
 -- ============= --

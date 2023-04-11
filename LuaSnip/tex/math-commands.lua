@@ -56,12 +56,6 @@ return {
   s({ trig = "asec", snippetType = "autosnippet" }, {
     t("\\arcsec"),
   }, { condition = tex.in_mathzone }),
-  s({ trig = "min", snippetType = "autosnippet" }, {
-    t("\\min"),
-  }, { condition = tex.in_mathzone }),
-  s({ trig = "max", snippetType = "autosnippet" }, {
-    t("\\max"),
-  }, { condition = tex.in_mathzone }),
   s({ trig = "log", snippetType = "autosnippet" }, {
     t("\\log"),
   }, { condition = tex.in_mathzone }),
@@ -218,6 +212,48 @@ return {
   s(
     { trig = "gt", snippetType = "autosnippet" },
     fmta("\\gt{<>}", {
+      i(0),
+    }),
+    { condition = tex.in_mathzone }
+  ),
+  s(
+    { trig = "min", snippetType = "autosnippet" },
+    fmta("\\min\\limits_{<>}", {
+      i(0),
+    }),
+    { condition = tex.in_mathzone }
+  ),
+  s(
+    { trig = "max", snippetType = "autosnippet" },
+    fmta("\\max\\limits_{<>}", {
+      i(0),
+    }),
+    { condition = tex.in_mathzone }
+  ),
+  s(
+    { trig = "amin", snippetType = "autosnippet" },
+    fmta("\\argmin\\limits_{<>}", {
+      i(0),
+    }),
+    { condition = tex.in_mathzone }
+  ),
+  s(
+    { trig = "amax", snippetType = "autosnippet" },
+    fmta("\\argmax\\limits_{<>}", {
+      i(0),
+    }),
+    { condition = tex.in_mathzone }
+  ),
+  s(
+    { trig = "sup", snippetType = "autosnippet" },
+    fmta("\\sup\\limits_{<>}", {
+      i(0),
+    }),
+    { condition = tex.in_mathzone }
+  ),
+  s(
+    { trig = "inf", snippetType = "autosnippet" },
+    fmta("\\inf\\limits_{<>}", {
       i(0),
     }),
     { condition = tex.in_mathzone }

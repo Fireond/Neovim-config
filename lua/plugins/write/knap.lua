@@ -10,7 +10,7 @@ return {
         desc = "Knap toggle auto previewing",
       },
       {
-        "<leader>pf",
+        "<leader>ps",
         function()
           require("knap").forward_jump()
         end,
