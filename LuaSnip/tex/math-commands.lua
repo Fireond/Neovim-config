@@ -210,24 +210,31 @@ return {
   s({ trig = "det", snippetType = "autosnippet" }, fmta("\\det", {}), { condition = tex.in_mathzone }),
   s({ trig = "vol", snippetType = "autosnippet" }, fmta("\\Vol", {}), { condition = tex.in_mathzone }),
   s(
+    { trig = "->", snippetType = "autosnippet" },
+    fmta("\\xlongrightarrow{<>}", {
+      i(0),
+    }),
+    { condition = tex.in_mathzone }
+  ),
+  s(
     { trig = "gt", snippetType = "autosnippet" },
     fmta("\\gt{<>}", {
       i(0),
     }),
     { condition = tex.in_mathzone }
   ),
+  s({ trig = "min", snippetType = "autosnippet" }, fmta("\\min", {}), { condition = tex.in_mathzone }),
   s(
-    { trig = "min", snippetType = "autosnippet" },
+    { trig = "\\minl", snippetType = "autosnippet" },
     fmta("\\min\\limits_{<>}", {
       i(0),
     }),
     { condition = tex.in_mathzone }
   ),
+  s({ trig = "max", snippetType = "autosnippet" }, fmta("\\max", {}), { condition = tex.in_mathzone }),
   s(
-    { trig = "max", snippetType = "autosnippet" },
-    fmta("\\max\\limits_{<>}", {
-      i(0),
-    }),
+    { trig = "\\maxl", snippetType = "autosnippet" },
+    fmta("\\max\\limits_{<>}", { i(0) }),
     { condition = tex.in_mathzone }
   ),
   s(

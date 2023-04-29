@@ -157,6 +157,14 @@ return {
     { condition = tex.in_mathzone }
   ),
   s(
+    { trig = "bot", regTrig = true, wordTrig = false, snippetType = "autosnippet", priority = 2000 },
+    fmta("\\bigotimes\\limits_{<>}^{<>}", {
+      i(1),
+      i(0),
+    }),
+    { condition = tex.in_mathzone }
+  ),
+  s(
     { trig = "pd", regTrig = true, wordTrig = false, snippetType = "autosnippet" },
     fmta("\\prod\\limits_{<>}^{<>}", {
       i(1),

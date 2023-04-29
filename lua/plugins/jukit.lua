@@ -29,5 +29,6 @@ return {
         desc = "Convert to html",
       },
     },
+    ft = "json",
   },
 }

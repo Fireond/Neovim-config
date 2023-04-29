@@ -74,12 +74,16 @@ return {
     \begin{spacing}{1.1}
     \maketitle \thispagestyle{empty}
       
-      <>
+    <>
       
     \end{spacing}
     \end{document}
     ]],
-      { c(1, { t("Abstract Algebra"), t("Mathematics for Artificial Intelligence") }), i(2, "number"), i(0) }
+      {
+        c(1, { t("Abstract Algebra"), t("Mathematics for Artificial Intelligence"), t("Quantum Computer Science") }),
+        i(2, "number"),
+        i(0),
+      }
     ),
     { condition = tex.in_text }
   ),

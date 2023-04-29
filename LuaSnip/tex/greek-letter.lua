@@ -97,6 +97,9 @@ return {
   s({ trig = "pi", snippetType = "autosnippet", wordTrig = false }, {
     t("\\pi"),
   }, { condition = tex.in_mathzone }),
+  s({ trig = "\\pii", snippetType = "autosnippet", wordTrig = false, priority = 2000 }, {
+    t("p_i"),
+  }, { condition = tex.in_mathzone }),
   s({ trig = "Pi", snippetType = "autosnippet", wordTrig = false }, {
     t("\\Pi"),
   }, { condition = tex.in_mathzone }),
