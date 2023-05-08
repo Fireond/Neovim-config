@@ -16,6 +16,7 @@ return {
           "lua",
           "luap",
           "markdown",
+          "make",
           "markdown_inline",
           "python",
           "query",

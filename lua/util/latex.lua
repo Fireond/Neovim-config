@@ -7,7 +7,6 @@ local MATH_NODES = {
 }
 
 local ts_utils = require("nvim-treesitter.ts_utils")
-local query = require("vim.treesitter.query")
 
 M.in_env = function(env)
   local node = ts_utils.get_node_at_cursor()
@@ -16,7 +15,7 @@ M.in_env = function(env)
     if node:type() == "generic_environment" then
       local begin = node:child(0)
       local name = begin:field("name")
-      if name[1] and query.get_node_text(name[1], bufnr, nil) == "{" .. env .. "}" then
+      if name[1] and vim.treesitter.get_node_text(name[1], bufnr, nil) == "{" .. env .. "}" then
         return true
       end
     end

@@ -9,7 +9,7 @@ local fmta = require("luasnip.extras.fmt").fmta
 local rep = require("luasnip.extras").rep
 local line_begin = require("luasnip.extras.expand_conditions").line_begin
 
-local tex = require("utils.latex")
+local tex = require("util.latex")
 
 local get_visual = function(args, parent)
   if #parent.snippet.env.SELECT_RAW > 0 then
@@ -299,6 +299,27 @@ return {
   s(
     { trig = "sq", wordTrig = false, snippetType = "autosnippet" },
     fmta("\\sqrt{<>}", {
+      i(0),
+    }),
+    { condition = tex.in_mathzone }
+  ),
+  s(
+    { trig = "mod", wordTrig = false, snippetType = "autosnippet" },
+    fmta("\\mod{<>}", {
+      i(0),
+    }),
+    { condition = tex.in_mathzone }
+  ),
+  s(
+    { trig = "nmod", wordTrig = false, snippetType = "autosnippet", priority = 2000 },
+    fmta("\\nmod{<>}", {
+      i(0),
+    }),
+    { condition = tex.in_mathzone }
+  ),
+  s(
+    { trig = "pmod", wordTrig = false, snippetType = "autosnippet", priority = 2000 },
+    fmta("\\pmod{<>}", {
       i(0),
     }),
     { condition = tex.in_mathzone }

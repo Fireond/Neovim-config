@@ -10,7 +10,7 @@ local fmta = require("luasnip.extras.fmt").fmta
 local rep = require("luasnip.extras").rep
 local line_begin = require("luasnip.extras.expand_conditions").line_begin
 
-local tex = require("utils.latex")
+local tex = require("util.latex")
 
 local get_visual = function(args, parent)
   if #parent.snippet.env.SELECT_RAW > 0 then
@@ -109,7 +109,7 @@ return {
     { condition = tex.in_mathzone }
   ),
   s(
-    { trig = "pm", snippetType = "autosnippet" },
+    { trig = "pmat", snippetType = "autosnippet" },
     fmta("\\pmat{<>}", {
       i(0),
     }),
@@ -202,21 +202,28 @@ return {
     { condition = tex.in_mathzone }
   ),
   s(
-    { trig = "bk", snippetType = "autosnippet" },
-    fmta("\\ip{<>}{<>}", {
-      i(1),
+    { trig = "vu", snippetType = "autosnippet" },
+    fmta("\\vu{<>}", {
       i(0),
     }),
     { condition = tex.in_mathzone }
   ),
-  s(
-    { trig = "kb", snippetType = "autosnippet" },
-    fmta("\\op{<>}{<>}", {
-      i(1),
-      i(0),
-    }),
-    { condition = tex.in_mathzone }
-  ),
+  -- s(
+  --   { trig = "bk", snippetType = "autosnippet" },
+  --   fmta("\\ip{<>}{<>}", {
+  --     i(1),
+  --     i(0),
+  --   }),
+  --   { condition = tex.in_mathzone }
+  -- ),
+  -- s(
+  --   { trig = "kb", snippetType = "autosnippet" },
+  --   fmta("\\op{<>}{<>}", {
+  --     i(1),
+  --     i(0),
+  --   }),
+  --   { condition = tex.in_mathzone }
+  -- ),
   s(
     { trig = "ev", snippetType = "autosnippet" },
     fmta("\\ev{<>}", {

@@ -14,7 +14,7 @@ return {
           "fj",
           function()
             return require("luasnip").jumpable(1) and "<Plug>luasnip-jump-next"
-              or "<c-\\><c-n>:call searchpair('[([{]', '', '[)\\]}]', 'W')<cr>a"
+              or "<c-\\><c-n>:call searchpair('[([{<|]', '', '[)\\]}>|]', 'W')<cr>a"
           end,
           expr = true,
           silent = true,
