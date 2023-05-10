@@ -34,6 +34,16 @@ return {
           end,
           mode = { "i", "s" },
         },
+        {
+          "<c-h>",
+          "<Plug>luasnip-next-choice",
+          mode = { "i", "s" },
+        },
+        {
+          "<c-p>",
+          "<Plug>luasnip-prev-choice",
+          mode = { "i", "s" },
+        },
       }
     end,
   },

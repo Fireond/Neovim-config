@@ -26,12 +26,12 @@ return {
     { trig = "bti", snippetType = "autosnippet" },
     fmta(
       [[
-      \begin{tikzpicture}[<>]
+      \begin{tikzpicture}<>
         <>
       \end{tikzpicture}
       ]],
       {
-        i(1, "overlay,remember picture,>=stealth,nodes={align=left,inner ysep=1pt},<-"),
+        c(1, { t("[overlay,remember picture,>=stealth,nodes={align=left,inner ysep=1pt},<-]"), t("") }),
         i(0),
       }
     ),

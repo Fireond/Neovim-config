@@ -22,35 +22,49 @@ end
 
 return {
   s(
+    { trig = "bra", snippetType = "autosnippet", priority = 1000 },
+    fmta("\\bra<<<>|", {
+      i(1),
+    }),
+    { condition = tex.in_mathzone }
+  ),
+  s(
+    { trig = "ket", snippetType = "autosnippet", priority = 1000 },
+    fmta("\\ket|<>>>", {
+      i(1),
+    }),
+    { condition = tex.in_mathzone }
+  ),
+  s(
     { trig = "bk", snippetType = "autosnippet", priority = 1000 },
-    fmta("\\braket<< <> >>", {
+    fmta("\\braket<<<>>>", {
       i(1),
     }),
     { condition = tex.in_mathzone }
   ),
   s(
     { trig = "kb", snippetType = "autosnippet", priority = 1000 },
-    fmta("\\ketbra| <> |", {
+    fmta("\\ketbra|<>|", {
       i(1),
     }),
     { condition = tex.in_mathzone }
   ),
   s(
-    { trig = "\\pab", snippetType = "autosnippet", priority = 1000 },
+    { trig = "pab", snippetType = "autosnippet", priority = 1000 },
     fmta("\\ab( <> )", {
       i(1),
     }),
     { condition = tex.in_mathzone }
   ),
   s(
-    { trig = "\\Bab", snippetType = "autosnippet", priority = 1000 },
+    { trig = "Bab", snippetType = "autosnippet", priority = 1000 },
     fmta("\\ab\\{ <> \\}", {
       i(1),
     }),
     { condition = tex.in_mathzone }
   ),
   s(
-    { trig = "\\bab", snippetType = "autosnippet", priority = 1000 },
+    { trig = "bab", snippetType = "autosnippet", priority = 1000 },
     fmta("\\ab[ <> ]", {
       i(1),
     }),
@@ -64,14 +78,14 @@ return {
     { condition = tex.in_mathzone }
   ),
   s(
-    { trig = "\\vab", snippetType = "autosnippet", priority = 1000 },
+    { trig = "vab", snippetType = "autosnippet", priority = 1000 },
     fmta("\\ab| <> |", {
       i(1),
     }),
     { condition = tex.in_mathzone }
   ),
   s(
-    { trig = "\\Vab", snippetType = "autosnippet", priority = 1000 },
+    { trig = "Vab", snippetType = "autosnippet", priority = 1000 },
     fmta("\\ab\\| <> \\|", {
       i(1),
     }),

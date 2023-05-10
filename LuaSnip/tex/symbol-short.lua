@@ -198,6 +198,9 @@ return {
   s({ trig = "par", wordTrig = false, snippetType = "autosnippet", priority = 2000 }, {
     t("\\partial"),
   }, { condition = tex.in_mathzone }),
+  s({ trig = "bb1", wordTrig = false, snippetType = "autosnippet", priority = 2000 }, {
+    t("\\mathbbm{1}"),
+  }, { condition = tex.in_mathzone }),
   s(
     { trig = "jk", wordTrig = false, snippetType = "autosnippet" },
     fmta(

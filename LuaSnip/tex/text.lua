@@ -10,6 +10,24 @@ return {
   s({ trig = "dps", snippetType = "autosnippet" }, {
     t("\\displaystyle"),
   }, { condition = tex.in_mathzone }),
+  s(
+    { trig = "qq", snippetType = "autosnippet" },
+    fmta("\\qq{<>}", {
+      i(0),
+    }),
+    { condition = tex.in_mathzone }
+  ),
+  s({ trig = "if", snippetType = "autosnippet" }, {
+    t("\\qq{if}"),
+  }, { condition = tex.in_mathzone }),
+  s({ trig = "or", snippetType = "autosnippet" }, { t("\\qq{or}") }, { condition = tex.in_mathzone }),
+  s({ trig = "otherwise", snippetType = "autosnippet" }, {
+    t("\\qq{otherwise}"),
+  }, { condition = tex.in_mathzone }),
+  s({ trig = "then", snippetType = "autosnippet" }, {
+    t("\\qq{then}"),
+  }, { condition = tex.in_mathzone }),
+
   s({ trig = "%%", snippetType = "autosnippet" }, {
     t("\\%"),
   }, { condition = tex.in_text }),
@@ -35,7 +53,7 @@ return {
     t("i.e."),
   }, { condition = tex.in_text }),
   s({ trig = "stt", snippetType = "autosnippet" }, {
-    t("s.t."),
+    t("such that"),
   }, { condition = tex.in_text }),
   s({ trig = "iso" }, {
     t("isomorphic"),
@@ -60,6 +78,9 @@ return {
   }, { condition = tex.in_text }),
   s({ trig = "=>", snippetType = "autosnippet" }, {
     t("\\(\\implies\\)"),
+  }, { condition = tex.in_text }),
+  s({ trig = "pid", snippetType = "autosnippet" }, {
+    t("P.I.D."),
   }, { condition = tex.in_text }),
   s(
     { trig = "homework" },

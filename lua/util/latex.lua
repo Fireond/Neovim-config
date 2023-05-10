@@ -37,6 +37,21 @@ M.in_text = function()
   return true
 end
 
+M.in_mathzone = function()
+  return not M.in_text()
+end
+
+M.in_item = function()
+  return M.in_env("itemize") or M.in_env("enumerate")
+end
+M.in_tikz = function()
+  return M.in_env("tikzpicture")
+end
+M.in_quantikz = function()
+  return M.in_env("quantikz")
+end
+
+-- For markdown
 M.in_latex = function()
   local node = ts_utils.get_node_at_cursor()
   while node do
@@ -48,17 +63,6 @@ M.in_latex = function()
   end
   print(false)
   return false
-end
-
-M.in_mathzone = function()
-  return not M.in_text()
-end
-
-M.in_item = function()
-  return M.in_env("itemize") or M.in_env("enumerate")
-end
-M.in_tikz = function()
-  return M.in_env("tikzpicture")
 end
 
 return M

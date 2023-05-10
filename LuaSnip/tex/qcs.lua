@@ -21,5 +21,5 @@ local get_visual = function(args, parent)
 end
 
 return {
-  s({ trig = "sp", snippetType = "autosnippet" }, fmta("\\hat{\\$}", {}), { condition = tex.in_mathzone }),
+  -- s({ trig = "sp", snippetType = "autosnippet" }, fmta("\\hat{\\$}", {}), { condition = tex.in_mathzone }),
 }

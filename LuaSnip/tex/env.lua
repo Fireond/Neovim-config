@@ -45,6 +45,21 @@ return {
     { condition = tex.in_text }
   ),
   s(
+    { trig = "bad", snippetType = "autosnippet" },
+    fmta(
+      [[
+      \begin{adjustbox}{width=0.<>\textwidth}
+        <>
+      \end{adjustbox}
+      ]],
+      {
+        i(1, "8"),
+        i(0),
+      }
+    ),
+    { condition = line_begin }
+  ),
+  s(
     { trig = "bp", snippetType = "autosnippet" },
     fmta(
       [[
@@ -104,20 +119,6 @@ return {
       }
     ),
     { condition = line_begin }
-  ),
-  s(
-    { trig = "framed", snippetType = "autosnippet" },
-    fmta(
-      [[
-      \begin{framed}
-        <>
-      \end{framed}
-      ]],
-      {
-        i(0),
-      }
-    ),
-    { condition = tex.in_mathzone }
   ),
   s(
     { trig = "box", snippetType = "autosnippet" },
