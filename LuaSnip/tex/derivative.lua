@@ -40,6 +40,14 @@ return {
   ),
   s(
     { trig = "ov", snippetType = "autosnippet" },
+    c(1, {
+      sn(nil, { t("\\odv{"), i(1), t("}{"), i(2), t("}") }),
+      sn(nil, { t("\\odv[order={"), i(3), t("}]{"), i(1), t("}{"), i(2), t("}") }),
+    }),
+    { condition = tex.in_mathzone }
+  ),
+  s(
+    { trig = "ov", snippetType = "autosnippet" },
     fmta("\\odv[order={<>}]{<>}{<>}", {
       i(0),
       i(1),

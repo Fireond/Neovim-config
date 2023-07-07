@@ -7,13 +7,33 @@ return {
         store_selection_keys = "`",
       })
       require("luasnip.loaders.from_lua").load({ paths = "~/.config/nvim/LuaSnip" })
+      local auto_expand = require("luasnip").expand_auto
+      require("luasnip").expand_auto = function(...)
+        vim.o.undolevels = vim.o.undolevels
+        auto_expand(...)
+      end
+      -- local types = require("luasnip.util.types")
+      -- require("luasnip").config.setup({
+      --   ext_opts = {
+      --     [types.choiceNode] = {
+      --       active = {
+      --         virt_text = { { "●", "GruvboxOrange" } },
+      --       },
+      --     },
+      --     [types.insertNode] = {
+      --       active = {
+      --         virt_text = { { "●", "GruvboxBlue" } },
+      --       },
+      --     },
+      --   },
+      -- })
     end,
     keys = function()
       return {
         {
           "fj",
           function()
-            return require("luasnip").jumpable(1) and "<Plug>luasnip-jump-next"
+            return require("luasnip").expand_or_locally_jumpable() and "<Plug>luasnip-jump-next"
               or "<c-\\><c-n>:call searchpair('[([{<|]', '', '[)\\]}>|]', 'W')<cr>a"
           end,
           expr = true,
@@ -23,7 +43,7 @@ return {
         {
           "fj",
           function()
-            require("luasnip").jump(1)
+            return require("luasnip").jump(1)
           end,
           mode = "s",
         },
@@ -44,6 +64,17 @@ return {
           "<Plug>luasnip-prev-choice",
           mode = { "i", "s" },
         },
+        -- {
+        --   "<tab>",
+        --   function()
+        --     if require("luasnip").expand_or_jumpable() then
+        --       require("luasnip").expand_or_jump()
+        --     else
+        --       return "<tab>"
+        --     end
+        --   end,
+        --   mode = { "i", "s" },
+        -- },
       }
     end,
   },

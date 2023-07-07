@@ -21,42 +21,54 @@ end
 
 return {
   s(
-    { trig = "map4", snippetType = "autosnippet", priority = 2000 },
+    { trig = "bmat", snippetType = "autosnippet" },
     fmta(
       [[
-    \mqty[
-    <> & <> & <> & <> \\
-    <> & <> & <> & <> \\
-    <> & <> & <> & <> \\
-    <> & <> & <> & <> \\
-    ]
-    ]],
+      \begin{bmatrix}
+        <>
+      \end{bmatrix}
+      ]],
       {
-        i(1),
-        i(2),
-        i(3),
-        i(4),
-        i(5),
-        i(6),
-        i(7),
-        i(8),
-        i(9),
-        i(10),
-        i(11),
-        i(12),
-        i(13),
-        i(14),
-        i(15),
         i(0),
       }
     ),
     { condition = tex.in_mathzone }
   ),
   s(
-    { trig = "bmat", snippetType = "autosnippet" },
+    { trig = "Bmat", snippetType = "autosnippet" },
     fmta(
       [[
-      \bmat{<>}
+      \begin{Bmatrix}
+        <>
+      \end{Bmatrix}
+      ]],
+      {
+        i(0),
+      }
+    ),
+    { condition = tex.in_mathzone }
+  ),
+  s(
+    { trig = "pmat", snippetType = "autosnippet" },
+    fmta(
+      [[
+      \begin{pmatrix}
+        <>
+      \end{pmatrix}
+      ]],
+      {
+        i(0),
+      }
+    ),
+    { condition = tex.in_mathzone }
+  ),
+  s(
+    { trig = "Vmat", snippetType = "autosnippet" },
+    fmta(
+      [[
+      \begin{Vmatrix}
+        <>
+      \end{Vmatrix}
       ]],
       {
         i(0),

@@ -96,7 +96,7 @@ return {
   s({ trig = "mid", wordTrig = false, snippetType = "autosnippet" }, {
     t("\\mid"),
   }, { condition = tex.in_mathzone }),
-  s({ trig = "nmid", wordTrig = false, snippetType = "autosnippet" }, {
+  s({ trig = "nmid", wordTrig = false, snippetType = "autosnippet", priority = 2000 }, {
     t("\\nmid"),
   }, { condition = tex.in_mathzone }),
   s({ trig = "sr", wordTrig = false, snippetType = "autosnippet" }, {
@@ -192,14 +192,20 @@ return {
   s({ trig = "ot", wordTrig = false, snippetType = "autosnippet" }, {
     t("\\otimes"),
   }, { condition = tex.in_mathzone }),
+  s({ trig = "op", wordTrig = false, snippetType = "autosnippet" }, {
+    t("\\oplus"),
+  }, { condition = tex.in_mathzone }),
   s({ trig = "not", wordTrig = false, snippetType = "autosnippet", priority = 2000 }, {
     t("\\not"),
   }, { condition = tex.in_mathzone }),
   s({ trig = "par", wordTrig = false, snippetType = "autosnippet", priority = 2000 }, {
     t("\\partial"),
   }, { condition = tex.in_mathzone }),
-  s({ trig = "bb1", wordTrig = false, snippetType = "autosnippet", priority = 2000 }, {
-    t("\\mathbbm{1}"),
+  s({ trig = "land", snippetType = "autosnippet" }, {
+    t("\\land"),
+  }, { condition = tex.in_mathzone }),
+  s({ trig = "lor", snippetType = "autosnippet" }, {
+    t("\\lor"),
   }, { condition = tex.in_mathzone }),
   s(
     { trig = "jk", wordTrig = false, snippetType = "autosnippet" },
@@ -207,7 +213,7 @@ return {
       [[
     _{<>}
     ]],
-      { i(0) }
+      { i(1) }
     ),
     { condition = tex.in_mathzone }
   ),
@@ -217,7 +223,7 @@ return {
       [[
     ^{<>}
     ]],
-      { i(0) }
+      { i(1) }
     ),
     { condition = tex.in_mathzone }
   ),

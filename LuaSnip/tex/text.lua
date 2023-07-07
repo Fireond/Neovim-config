@@ -10,24 +10,38 @@ return {
   s({ trig = "dps", snippetType = "autosnippet" }, {
     t("\\displaystyle"),
   }, { condition = tex.in_mathzone }),
-  s(
-    { trig = "qq", snippetType = "autosnippet" },
-    fmta("\\qq{<>}", {
-      i(0),
-    }),
-    { condition = tex.in_mathzone }
-  ),
   s({ trig = "if", snippetType = "autosnippet" }, {
-    t("\\qq{if}"),
+    t("\\text{\\ if\\ }"),
   }, { condition = tex.in_mathzone }),
-  s({ trig = "or", snippetType = "autosnippet" }, { t("\\qq{or}") }, { condition = tex.in_mathzone }),
+  s({ trig = "or", snippetType = "autosnippet" }, { t("\\text{\\ or\\ }") }, { condition = tex.in_mathzone }),
   s({ trig = "otherwise", snippetType = "autosnippet" }, {
-    t("\\qq{otherwise}"),
+    t("\\text{\\ otherwise\\ }"),
   }, { condition = tex.in_mathzone }),
   s({ trig = "then", snippetType = "autosnippet" }, {
-    t("\\qq{then}"),
+    t("\\text{\\ then\\ }"),
+  }, { condition = tex.in_mathzone }),
+  s({ trig = "since", snippetType = "autosnippet" }, {
+    t("\\text{\\ since\\ }"),
+  }, { condition = tex.in_mathzone }),
+  s({ trig = "by", snippetType = "autosnippet" }, {
+    t("\\text{\\ by\\ }"),
+  }, { condition = tex.in_mathzone }),
+  s({ trig = "and", snippetType = "autosnippet" }, {
+    t("\\text{\\ and\\ }"),
   }, { condition = tex.in_mathzone }),
 
+  s({ trig = "label", snippetType = "autosnippet" }, {
+    t("\\label{"),
+    i(0),
+    t("}"),
+  }, { condition = tex.in_text, show_condition = tex.in_text }),
+
+  s({ trig = "wlog", snippetType = "autosnippet" }, {
+    t("without loss of generality"),
+  }, { condition = tex.in_text }),
+  s({ trig = "Wlog", snippetType = "autosnippet" }, {
+    t("Without loss of generality"),
+  }, { condition = tex.in_text }),
   s({ trig = "%%", snippetType = "autosnippet" }, {
     t("\\%"),
   }, { condition = tex.in_text }),
@@ -55,6 +69,9 @@ return {
   s({ trig = "stt", snippetType = "autosnippet" }, {
     t("such that"),
   }, { condition = tex.in_text }),
+  s({ trig = "iff", snippetType = "autosnippet" }, {
+    t("if and only if"),
+  }, { condition = tex.in_text }),
   s({ trig = "iso" }, {
     t("isomorphic"),
   }, { condition = tex.in_text }),
@@ -67,20 +84,26 @@ return {
   s({ trig = "homo" }, {
     t("homomorphic"),
   }, { condition = tex.in_text }),
-  s({ trig = "psp", snippetType = "autosnippet" }, {
-    t("\\(p\\)-subgroup"),
-  }, { condition = tex.in_text }),
-  s({ trig = "pgp", snippetType = "autosnippet" }, {
-    t("\\(p\\)-subgroup"),
-  }, { condition = tex.in_text }),
-  s({ trig = "spsp", snippetType = "autosnippet" }, {
-    t("Sylow \\(p\\)-subgroup"),
-  }, { condition = tex.in_text }),
+  -- s({ trig = "psp", snippetType = "autosnippet" }, {
+  --   t("\\(p\\)-subgroup"),
+  -- }, { condition = tex.in_text }),
+  -- s({ trig = "pgp", snippetType = "autosnippet" }, {
+  --   t("\\(p\\)-subgroup"),
+  -- }, { condition = tex.in_text }),
+  -- s({ trig = "spsp", snippetType = "autosnippet" }, {
+  --   t("Sylow \\(p\\)-subgroup"),
+  -- }, { condition = tex.in_text }),
   s({ trig = "=>", snippetType = "autosnippet" }, {
     t("\\(\\implies\\)"),
   }, { condition = tex.in_text }),
   s({ trig = "pid", snippetType = "autosnippet" }, {
     t("P.I.D."),
+  }, { condition = tex.in_text }),
+  s({ trig = "ufd", snippetType = "autosnippet" }, {
+    t("U.F.D."),
+  }, { condition = tex.in_text }),
+  s({ trig = "ed", snippetType = "autosnippet" }, {
+    t("E.D."),
   }, { condition = tex.in_text }),
   s(
     { trig = "homework" },
@@ -101,7 +124,15 @@ return {
     \end{document}
     ]],
       {
-        c(1, { t("Abstract Algebra"), t("Mathematics for Artificial Intelligence"), t("Quantum Computer Science") }),
+        c(
+          1,
+          {
+            t("Abstract Algebra"),
+            t("Mathematics for Artificial Intelligence"),
+            t("Quantum Computer Science"),
+            t("Algebra and Computation"),
+          }
+        ),
         i(2, "number"),
         i(0),
       }

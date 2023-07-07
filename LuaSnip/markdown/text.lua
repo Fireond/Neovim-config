@@ -26,6 +26,7 @@ return {
   ),
   s({ trig = ";b", snippetType = "autosnippet" }, fmta("**<>**", i(1))),
   s({ trig = ";t", snippetType = "autosnippet" }, fmta("*<>*", i(1))),
+  s({ trig = "xx", snippetType = "autosnippet" }, fmta("$\\times$", {})),
   s(
     { trig = ";c", snippetType = "autosnippet" },
     fmta(

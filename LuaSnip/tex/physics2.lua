@@ -22,72 +22,71 @@ end
 
 return {
   s(
-    { trig = "bra", snippetType = "autosnippet", priority = 1000 },
+    { trig = "bra", wordTrig = false, snippetType = "autosnippet", priority = 1000 },
     fmta("\\bra<<<>|", {
       i(1),
     }),
     { condition = tex.in_mathzone }
   ),
   s(
-    { trig = "ket", snippetType = "autosnippet", priority = 1000 },
+    { trig = "ket", wordTrig = false, snippetType = "autosnippet", priority = 1000 },
     fmta("\\ket|<>>>", {
       i(1),
     }),
     { condition = tex.in_mathzone }
   ),
   s(
-    { trig = "bk", snippetType = "autosnippet", priority = 1000 },
+    { trig = "bk", wordTrig = false, snippetType = "autosnippet", priority = 1000 },
     fmta("\\braket<<<>>>", {
       i(1),
     }),
     { condition = tex.in_mathzone }
   ),
   s(
-    { trig = "kb", snippetType = "autosnippet", priority = 1000 },
-    fmta("\\ketbra|<>|", {
+    { trig = "kb", wordTrig = false, snippetType = "autosnippet", priority = 1000 },
+    fmta("\\ketbra|<>>><<<>|", {
       i(1),
+      i(2),
     }),
     { condition = tex.in_mathzone }
   ),
   s(
-    { trig = "pab", snippetType = "autosnippet", priority = 1000 },
+    { trig = "pab", wordTrig = false, snippetType = "autosnippet", priority = 1000 },
     fmta("\\ab( <> )", {
-      i(1),
+      i(0),
     }),
     { condition = tex.in_mathzone }
   ),
   s(
-    { trig = "Bab", snippetType = "autosnippet", priority = 1000 },
+    { trig = "Bab", wordTrig = false, snippetType = "autosnippet", priority = 1000 },
     fmta("\\ab\\{ <> \\}", {
-      i(1),
+      i(0),
     }),
     { condition = tex.in_mathzone }
   ),
   s(
-    { trig = "bab", snippetType = "autosnippet", priority = 1000 },
+    { trig = "bab", wordTrig = false, snippetType = "autosnippet", priority = 1000 },
     fmta("\\ab[ <> ]", {
-      i(1),
+      i(0),
     }),
     { condition = tex.in_mathzone }
   ),
   s(
-    { trig = "\\forallb", snippetType = "autosnippet", priority = 1000 },
+    { trig = "\\forallb", wordTrig = false, snippetType = "autosnippet", priority = 1000 },
     fmta("\\ab<< <> >>", {
-      i(1),
+      i(0),
     }),
     { condition = tex.in_mathzone }
   ),
   s(
-    { trig = "vab", snippetType = "autosnippet", priority = 1000 },
-    fmta("\\ab| <> |", {
-      i(1),
-    }),
+    { trig = "vab", snippetType = "autosnippet" },
+    c(1, { sn(nil, { t("\\ab|"), i(1), t("|") }), sn(nil, { t("\\ab*|"), i(1), t("|") }) }),
     { condition = tex.in_mathzone }
   ),
   s(
-    { trig = "Vab", snippetType = "autosnippet", priority = 1000 },
+    { trig = "Vab", wordTrig = false, snippetType = "autosnippet", priority = 1000 },
     fmta("\\ab\\| <> \\|", {
-      i(1),
+      i(0),
     }),
     { condition = tex.in_mathzone }
   ),

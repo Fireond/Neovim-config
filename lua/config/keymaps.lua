@@ -15,10 +15,6 @@ local function map(mode, lhs, rhs, opts)
   end
 end
 
-map("n", "<leader>qc", function()
-  require("util").clean()
-end, { desc = "Clean" })
-
 -- movement
 map({ "n", "v", "o" }, "H", "^", { desc = "Use 'H' as '^'" })
 map({ "n", "v", "o" }, "L", "$", { desc = "Use 'L' as '$'" })
@@ -43,18 +39,23 @@ map("n", "<Right>", "<cmd>vertical resize +2<cr>", { desc = "Increase window wid
 -- go to files
 map("n", "<leader>go", "<cmd>e ~/.config/nvim/lua/config/options.lua<cr>", { desc = "Go to options config" })
 map("n", "<leader>gk", "<cmd>e ~/.config/nvim/lua/config/keymaps.lua<cr>", { desc = "Go to keymaps config" })
-map("n", "<leader>gu", "<cmd>e ~/.config/nvim/lua/util/latex.lua<cr>", { desc = "Go to keymaps config" })
-map("n", "<leader>gl", "<cmd>e ~/.config/nvim/lua/plugins/write/latex.lua<cr>", { desc = "Go to latex config" })
+map("n", "<leader>ga", "<cmd>e ~/.config/nvim/lua/config/autocmds.lua<cr>", { desc = "Go to autocmds config" })
+map("n", "<leader>gu", "<cmd>e ~/.config/nvim/lua/util/latex.lua<cr>", { desc = "Go to util config" })
+map("n", "<leader>gl", "<cmd>e ~/.config/nvim/lua/plugins/write/latex.lua<cr>", { desc = "Go to latex.nvim config" })
 map("n", "<leader>gt", "<cmd>e ~/Documents/Latex/Package_elegantbook.tex<cr>", { desc = "Go to latex template" })
+map("n", "<leader>gi", "<cmd>e ~/Documents/Latex/latexindent.yaml<cr>", { desc = "Go to latexindent" })
 map("n", "<leader>gs", function()
   require("luasnip.loaders").edit_snippet_files({})
 end, { desc = "Go to luasnip config" })
 map("n", "<leader>gp", function()
   require("neo-tree.command").execute({ toggle = true, dir = "/Users/hanyu_yan/.config/nvim/lua/plugins" })
 end, { desc = "Go to plugins config" })
+map("n", "<leader>gF", function()
+  require("neo-tree.command").execute({ toggle = true, dir = "/Users/hanyu_yan/.config/nvim/ftplugin" })
+end, { desc = "Go to plugins config" })
 map("n", "<leader>gf", function()
   require("neo-tree.command").execute({ toggle = true, dir = "/Users/hanyu_yan/.config/fvim/lua" })
-end, { desc = "Go to plugins config" })
+end, { desc = "Go to fvim config" })
 map("n", "<leader>gL", function()
   require("neo-tree.command").execute({
     toggle = true,

@@ -4,7 +4,7 @@ return {
     config = true,
     ft = "markdown",
     keys = {
-      { "<leader>pf", "<cmd>FeMaco<cr>", desc = "FeMaco preview" },
+      { "<leader>pe", "<cmd>FeMaco<cr>", desc = "FeMaco preview" },
     },
   },
 }

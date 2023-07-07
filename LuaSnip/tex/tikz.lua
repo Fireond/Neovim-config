@@ -12,7 +12,7 @@ local tex = require("util.latex")
 
 local get_visual = function(args, parent)
   if #parent.snippet.env.SELECT_RAW > 0 then
-    return sn(nil, i(1, parent.snippet.env.SELECT_RAW))
+    return sn(nil, t(parent.snippet.env.SELECT_RAW))
   else -- If SELECT_RAW is empty, return a blank insert node
     return sn(nil, i(1))
   end
@@ -131,7 +131,7 @@ return {
       ]],
       {
         i(1, "red"),
-        i(0),
+        i(2),
       }
     ),
     { condition = tex.in_mathzone }
@@ -144,9 +144,7 @@ return {
       ]],
       {
         i(1, "red"),
-        f(function(_, snip)
-          return snip.env.TM_SELECTED_TEXT[1] or {}
-        end, {}),
+        d(2, get_visual),
       }
     ),
     { condition = tex.in_mathzone }
@@ -159,7 +157,7 @@ return {
       ]],
       {
         i(1, "red"),
-        i(0),
+        i(2),
       }
     ),
     { condition = tex.in_text }
@@ -172,9 +170,7 @@ return {
       ]],
       {
         i(1, "red"),
-        f(function(_, snip)
-          return snip.env.TM_SELECTED_TEXT[1] or {}
-        end, {}),
+        d(2, get_visual),
       }
     ),
     { condition = tex.in_text }

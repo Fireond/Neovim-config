@@ -46,7 +46,7 @@ return {
         java = "cd $dir && javac $fileName && java $fileNameWithoutExt",
         c = "cd $dir && gcc $fileName -o $fileNameWithoutExt && $dir/$fileNameWithoutExt",
         cpp = "cd $dir && g++ $fileName -o $fileNameWithoutExt && $dir/$fileNameWithoutExt",
-        python = "python -u",
+        python = "python3 -u",
         sh = "bash",
         rust = "cd $dir && rustc $fileName && $dir$fileNameWithoutExt",
       },

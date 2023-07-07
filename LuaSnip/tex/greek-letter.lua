@@ -10,7 +10,13 @@ return {
   s({ trig = "Alp", snippetType = "autosnippet", wordTrig = false }, {
     t("\\Alpha"),
   }, { condition = tex.in_mathzone }),
+  s({ trig = ";a", snippetType = "autosnippet", wordTrig = false }, {
+    t("\\alpha"),
+  }, { condition = tex.in_mathzone }),
   s({ trig = "beta", snippetType = "autosnippet", wordTrig = false }, {
+    t("\\beta"),
+  }, { condition = tex.in_mathzone }),
+  s({ trig = ";b", snippetType = "autosnippet", wordTrig = false }, {
     t("\\beta"),
   }, { condition = tex.in_mathzone }),
   s({ trig = "Beta", snippetType = "autosnippet", wordTrig = false }, {
@@ -19,10 +25,16 @@ return {
   s({ trig = "gam", snippetType = "autosnippet", wordTrig = false }, {
     t("\\gamma"),
   }, { condition = tex.in_mathzone }),
+  s({ trig = ";c", snippetType = "autosnippet", wordTrig = false }, {
+    t("\\gamma"),
+  }, { condition = tex.in_mathzone }),
   s({ trig = "Gam", snippetType = "autosnippet", wordTrig = false }, {
     t("\\Gamma"),
   }, { condition = tex.in_mathzone }),
   s({ trig = "del", snippetType = "autosnippet", wordTrig = false }, {
+    t("\\delta"),
+  }, { condition = tex.in_mathzone }),
+  s({ trig = ";d", snippetType = "autosnippet", wordTrig = false }, {
     t("\\delta"),
   }, { condition = tex.in_mathzone }),
   s({ trig = "Del", snippetType = "autosnippet", wordTrig = false }, {

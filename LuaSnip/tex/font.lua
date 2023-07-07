@@ -8,7 +8,7 @@ local rep = require("luasnip.extras").rep
 local line_begin = require("luasnip.extras.expand_conditions").line_begin
 local get_visual = function(args, parent)
   if #parent.snippet.env.SELECT_RAW > 0 then
-    return sn(nil, i(1, parent.snippet.env.SELECT_RAW))
+    return sn(nil, t(parent.snippet.env.SELECT_RAW))
   else -- If SELECT_RAW is empty, return a blank insert node
     return sn(nil, i(1))
   end
@@ -112,10 +112,10 @@ return {
     })
   ),
   s(
-    { trig = "tet", snippetType = "autosnippet", priority = 2000 },
-    fmta("\\text{<>}", {
+    { trig = "qq", snippetType = "autosnippet", priority = 2000 },
+    fmta("\\text{\\ <>\\ }", {
       d(1, get_visual),
-    })
+    }, { conditon = tex.in_mathzone })
   ),
   s(
     { trig = "tet", snippetType = "autosnippet" },

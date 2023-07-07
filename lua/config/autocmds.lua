@@ -37,3 +37,13 @@ autocmd("BufEnter", {
   pattern = "",
   command = "set fo-=c fo-=r fo-=o",
 })
+
+-- vim.api.nvim_create_autocmd({ "FileType", "InsertLeave" }, {
+--   pattern = "tex",
+--   callback = require("util.latex").format,
+-- })
+
+-- vim.api.nvim_create_autocmd("BufEnter", {
+--   pattern = "*",
+--   command = "normal! zz",
+-- })

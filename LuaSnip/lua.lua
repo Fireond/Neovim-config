@@ -44,6 +44,20 @@ return {
     { condition = line_begin }
   ),
   s(
+    { trig = "starsnip", snippetType = "autosnippet" },
+    fmta(
+      [[
+      s(
+        { trig = "<>", snippetType = "autosnippet" },
+        c(1, { sn(nil, { t("\\<>{"), i(1), t("}") }), sn(nil, { t("\\<>*{"), i(1), t("}") }) }),
+        { condition = tex.<> }
+      ),
+      ]],
+      { i(1), rep(1), rep(1), c(2, { t("in_quantikz"), t("in_mathzone") }) }
+    ),
+    { condition = line_begin }
+  ),
+  s(
     { trig = "fmtasnip", snippetType = "autosnippet" },
     fmta(
       [[
@@ -62,7 +76,7 @@ return {
     fmta(
       [[
       s({ trig = "<>", snippetType = "autosnippet" }, {
-        t("<>"),
+        t("\\<>"),
       }, { condition = tex.<> }),
       ]],
       { i(1), rep(1), c(2, { t("in_mathzone"), t("in_quantikz") }) }

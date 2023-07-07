@@ -148,11 +148,19 @@ return {
     }),
     { condition = tex.in_mathzone }
   ),
+  -- s(
+  --   { trig = "sum", regTrig = true, wordTrig = false, snippetType = "autosnippet" },
+  --   fmta("\\sum\\limits_{<>}^{<>}", {
+  --     i(1),
+  --     i(0),
+  --   }),
+  --   { condition = tex.in_mathzone }
+  -- ),
   s(
-    { trig = "sum", regTrig = true, wordTrig = false, snippetType = "autosnippet" },
-    fmta("\\sum\\limits_{<>}^{<>}", {
-      i(1),
-      i(0),
+    { trig = "sum", snippetType = "autosnippet" },
+    c(1, {
+      sn(nil, { t("\\sum\\limits_{"), i(1), t("} ") }),
+      sn(nil, { t("\\sum\\limits_{"), i(1), t("}^{"), i(2), t("} ") }),
     }),
     { condition = tex.in_mathzone }
   ),
@@ -206,7 +214,7 @@ return {
   ),
   s(
     { trig = "int", regTrig = true, wordTrig = false, snippetType = "autosnippet" },
-    fmta("\\int_{<>}^{<>} <> \\dd{<>}", {
+    fmta("\\int_{<>}^{<>} <> \\d <>", {
       i(1),
       i(2),
       i(3),
@@ -216,7 +224,7 @@ return {
   ),
   s(
     { trig = "2int", regTrig = true, wordTrig = false, snippetType = "autosnippet", priority = 2000 },
-    fmta("\\int_{<>}^{<>}\\int_{<>}^{<>} <> \\dd{<>}\\dd{<>}", {
+    fmta("\\int_{<>}^{<>}\\int_{<>}^{<>} <> \\d <>\\d <>", {
       i(1),
       i(2),
       i(3),
@@ -229,7 +237,7 @@ return {
   ),
   s(
     { trig = "iint", regTrig = true, wordTrig = false, snippetType = "autosnippet", priority = 2000 },
-    fmta("\\iint\\limits_{<>}^{<>} <> \\dd{<>}", {
+    fmta("\\iint\\limits_{<>}^{<>} <> \\d <>", {
       i(1, "-\\infty"),
       i(2, "\\infty"),
       i(3),
@@ -239,7 +247,7 @@ return {
   ),
   s(
     { trig = "lint", regTrig = true, wordTrig = false, snippetType = "autosnippet", priority = 2000 },
-    fmta("\\int\\limits_{<>} <> \\dd{<>}", {
+    fmta("\\int\\limits_{<>} <> \\d <>", {
       i(1, "\\infty"),
       i(2),
       i(0),
