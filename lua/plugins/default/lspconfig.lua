@@ -5,7 +5,7 @@ return {
       ---@type lspconfig.options
       servers = {
         texlab = {
-          -- mason = false,
+          mason = false,
           settings = {
             texlab = {
               build = {
@@ -28,7 +28,7 @@ return {
                 },
               },
               diagnostics = { ignoredPatterns = { "^Overfull", "^Underfull" } },
-              latexFormatter = "none",
+              -- latexFormatter = "none",
               -- bibFormatter = "latexindent",
               -- latexindent = {
               --   ["local"] = "latexindent.yaml",

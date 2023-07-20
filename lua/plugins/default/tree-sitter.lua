@@ -10,7 +10,7 @@ return {
           "bash",
           "c",
           "cpp",
-          "help",
+          -- "help",
           "html",
           "json",
           "lua",
