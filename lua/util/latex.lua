@@ -77,8 +77,8 @@ end
 M.format = function()
   local current_file = vim.fn.expand("%:p")
   local latexindent = "latexindent -g /dev/null " .. current_file .. " -wd -l ~/Documents/Latex/latexindent.yaml"
-  -- local pdflatex = "pdflatex " .. current_file
-  -- vim.api.nvim_call_function("system", { pdflatex })
+  local build = "pdflatex " .. current_file
+  vim.api.nvim_call_function("system", { build })
   vim.cmd("w")
   M.clean()
   vim.api.nvim_call_function("system", { latexindent })

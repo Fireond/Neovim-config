@@ -4,12 +4,12 @@ return {
     opts = {
       ---@type lspconfig.options
       servers = {
-        -- texlab will be automatically installed with mason and loaded with lspconfig
         texlab = {
+          -- mason = false,
           settings = {
             texlab = {
               build = {
-                -- executable = "pdflatex",
+                executable = "pdflatex",
                 -- args = {},
                 onSave = true,
               },

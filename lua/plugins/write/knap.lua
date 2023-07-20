@@ -1,6 +1,7 @@
 return {
   {
     "frabjous/knap",
+    enabled = false,
     keys = {
       {
         "<leader>pk",

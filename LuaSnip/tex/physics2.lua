@@ -86,7 +86,7 @@ return {
   s(
     { trig = "Vab", wordTrig = false, snippetType = "autosnippet", priority = 1000 },
     fmta("\\ab\\| <> \\|", {
-      i(0),
+      i(1),
     }),
     { condition = tex.in_mathzone }
   ),
